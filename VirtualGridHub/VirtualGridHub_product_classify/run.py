@@ -129,9 +129,9 @@ def plot_cwt_save(cwtmatr_,figure_size,SAVEPATH,FILENAME):
     
 #     return model
 
-ROOT_DIR = '/home/pi/Desktop/doyer/research/VirtualGridHub/VirtualGridHub_product_classify/eval_csv/ver2.0/negotiation/test/xperiaxz2compact#1'
+ROOT_DIR = '/home/pi/Desktop/doyer/research/VirtualGridHub/VirtualGridHub_product_classify/eval_csv/ver2.0/negotiation/train/xperiaxz2compact#1'
 TARGET_PATTERN = "**.csv"
-SAVEPATH = '/home/pi/Desktop/doyer/research/VirtualGridHub/VirtualGridHub_product_classify/eval_cwt/ver2.0/negotiation/test/xperiaxz2compact#1'
+SAVEPATH = '/home/pi/Desktop/doyer/research/VirtualGridHub/VirtualGridHub_product_classify/eval_cwt/ver2.0/negotiation/train/xperiaxz2compact#1'
 classes = ['Pixel_#1','Pixel_#2','Pixel_#3']
 nb_classes = len(classes)
 img_rows, img_cols = 224, 224
