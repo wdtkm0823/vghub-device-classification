@@ -1,32 +1,32 @@
 import os
-from tensorflow import keras
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.models import Model
-from tensorflow.keras.layers import Input, Dense, Dropout, Activation, Flatten
-from tensorflow.keras import optimizers
-from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
-from tensorflow.keras.preprocessing.image import load_img, img_to_array
+# from tensorflow import keras
+# from tensorflow.keras.preprocessing.image import ImageDataGenerator
+# from tensorflow.keras.models import Sequential
+# from tensorflow.keras.models import Model
+# from tensorflow.keras.layers import Input, Dense, Dropout, Activation, Flatten
+# from tensorflow.keras import optimizers
+# from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
+# from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from PIL import Image
 import numpy as np
-import tensorflow as tf
+# # import tensorflow as tf
 import pandas as pd
 import seaborn as sns
 from pylab import rcParams
 import matplotlib.pyplot as plt
 from matplotlib import rc
 from pandas.plotting import register_matplotlib_converters
-import math
+# import math
 import glob
-from sklearn.model_selection import train_test_split
-import cv2
-from skimage import feature,filters
-from PIL import Image
-import sys
+# from sklearn.model_selection import train_test_split
+# import cv2
+# from skimage import feature,filters
+# from PIL import Image
+# import sys
 from scipy import signal
-import cv2
-from matplotlib import pyplot as plt
-from typing import List,Tuple
+# import cv2
+# from matplotlib import pyplot as plt
+# from typing import List,Tuple
 
 # 以下の２行はJupyter環境の場合のみ必要
 #%matplotlib inline
@@ -38,10 +38,10 @@ sns.set(style='whitegrid', palette='muted', font_scale=1.5)
 
 rcParams['figure.figsize'] = 22, 10
 
-RANDOM_SEED = 42
+# RANDOM_SEED = 42
 
-np.random.seed(RANDOM_SEED)
-tf.random.set_seed(RANDOM_SEED)
+# np.random.seed(RANDOM_SEED)
+# tf.random.set_seed(RANDOM_SEED)
 
 #データセット分の画像を生成
 def make_cwt_dataset(data_path, save_a_path):
@@ -101,37 +101,37 @@ def plot_cwt_save(cwtmatr_,figure_size,SAVEPATH,FILENAME):
     #plt.show()#kore wo kesuto dame
     plt.close('all')
     
-def my_model_load():
-    input_tensor = Input(shape=(img_rows, img_cols, 3))
-    vgg16 = VGG16(include_top=False, weights='imagenet',#weights = '../imagenet/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5',
-                    #weights=None,
-                    input_tensor=input_tensor)
+# def my_model_load():
+#     input_tensor = Input(shape=(img_rows, img_cols, 3))
+#     vgg16 = VGG16(include_top=False, weights='imagenet',#weights = '../imagenet/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5',
+#                     #weights=None,
+#                     input_tensor=input_tensor)
     
-    #全結合層の構築
-    #vgg16.summary()
-    top_model = Sequential()
-    top_model.add(Flatten(input_shape=vgg16.output_shape[1:]))
-    top_model.add(Dense(256, activation='relu'))
-    top_model.add(Dropout(0.5))
-    top_model.add(Dense(nb_classes, activation='softmax'))
+#     #全結合層の構築
+#     #vgg16.summary()
+#     top_model = Sequential()
+#     top_model.add(Flatten(input_shape=vgg16.output_shape[1:]))
+#     top_model.add(Dense(256, activation='relu'))
+#     top_model.add(Dropout(0.5))
+#     top_model.add(Dense(nb_classes, activation='softmax'))
     
-    model = Model(inputs=vgg16.input, outputs=top_model(vgg16.output))
+#     model = Model(inputs=vgg16.input, outputs=top_model(vgg16.output))
     
-    #model.summary()
-    #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep300.hdf5'))#これホントはMatlabの画像だった
-    #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep150_20211212.hdf5'))#epoch 150 のPython figure #bad
-    #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep300_20211212.hdf5'))#epoch 300 のPython figure #good?
-    #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep500_20211212.hdf5'))#epoch 500 のPython figure #bad
-    #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep150_20211218.hdf5'))#epoch 150 のPython figure #soso?
-    #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep300_20211218.hdf5'))#epoch 300 のPython figure #bad
-    model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep500_20211218.hdf5'))#epoch 500 のPython figure # good?
-    #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_VG-Hub_ep300.hdf5'))
+#     #model.summary()
+#     #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep300.hdf5'))#これホントはMatlabの画像だった
+#     #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep150_20211212.hdf5'))#epoch 150 のPython figure #bad
+#     #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep300_20211212.hdf5'))#epoch 300 のPython figure #good?
+#     #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep500_20211212.hdf5'))#epoch 500 のPython figure #bad
+#     #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep150_20211218.hdf5'))#epoch 150 のPython figure #soso?
+#     #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep300_20211218.hdf5'))#epoch 300 のPython figure #bad
+#     model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep500_20211218.hdf5'))#epoch 500 のPython figure # good?
+#     #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_VG-Hub_ep300.hdf5'))
     
-    return model
+#     return model
 
-ROOT_DIR = 'eval_csv'
+ROOT_DIR = '/home/pi/Desktop/doyer/research/VirtualGridHub/VirtualGridHub_product_classify/eval_csv/ver2.0/negotiation/test/xperiaxz2compact#1'
 TARGET_PATTERN = "**.csv"
-SAVEPATH = 'eval_cwt'
+SAVEPATH = '/home/pi/Desktop/doyer/research/VirtualGridHub/VirtualGridHub_product_classify/eval_cwt/ver2.0/negotiation/test/xperiaxz2compact#1'
 classes = ['Pixel_#1','Pixel_#2','Pixel_#3']
 nb_classes = len(classes)
 img_rows, img_cols = 224, 224
@@ -144,18 +144,18 @@ def predict():
     #csv から　cwt の画像を生成し，データセットに保存
     make_cwt_dataset(root_a_test_path, SAVEPATH)
     filename = glob.glob(os.path.join(SAVEPATH, '*.png'))
-    '''model = my_model_load()
-    for target in filename:
-        #img = np.array( Image.open(target))
-        #plt.imshow( img )
-        img = load_img(target, target_size=(img_rows, img_cols))
-        x = img_to_array(img)
-        x = np.expand_dims(x, axis=0)
-        predict = model.predict(preprocess_input(x))
-        for pre in predict:
-            y = pre.argmax()
-            print("filename =", target)
-            print("test result =",classes[y], pre)'''
+    # model = my_model_load()
+    # for target in filename:
+    #     #img = np.array( Image.open(target))
+    #     #plt.imshow( img )
+    #     img = load_img(target, target_size=(img_rows, img_cols))
+    #     x = img_to_array(img)
+    #     x = np.expand_dims(x, axis=0)
+    #     predict = model.predict(preprocess_input(x))
+    #     for pre in predict:
+    #         y = pre.argmax()
+    #         print("filename =", target)
+    #         print("test result =",classes[y], pre)
         
 
 
