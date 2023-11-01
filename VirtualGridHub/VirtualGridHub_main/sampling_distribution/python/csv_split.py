@@ -3,6 +3,23 @@ import pandas as pd
 import numpy as np
 import os
 
+# product = "cheeropowerplus5#1"
+product = "pixel3a#1"
+# product = "ipadair4th#1"
+# product = "xperiaxz2compact#1"
+
+soc = "40"
+
+# data = "test"
+# data = "validation"
+data = "train"
+
+# aplication = "home"
+# aplication = "sns"
+# aplication = "game"
+aplication = "video"
+
+number = "1"
 
 def make_path(output_name):
     port_num = 7
@@ -11,7 +28,10 @@ def make_path(output_name):
     output_paths = []
     for i in range(port_num):
         #print(output_path+output_name+"_"+str(i)+".csv")
-        output_paths.append(os.path.join(output_path,output_name+"_"+str(i)+".csv"))
+        if i == 3:  
+            output_paths.append(os.path.join(output_path,output_name+"_"+str(i)+"_"+product+"_"+"soc"+soc+"_"+aplication+"_"+data+"_"+number+".csv"))
+        else:
+            output_paths.append(os.path.join(output_path,output_name+"_"+str(i)+".csv"))
     return output_paths
 
 def convert_csv(csv, output_paths):
