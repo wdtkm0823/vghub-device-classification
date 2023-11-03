@@ -4,8 +4,8 @@ import numpy as np
 import os
 
 # product = "cheeropowerplus5#1"
-product = "pixel3a#1"
-# product = "ipadair4th#1"
+# product = "pixel3a#1"
+product = "ipadair4th#1"
 # product = "xperiaxz2compact#1"
 
 soc = "40"
@@ -14,10 +14,10 @@ soc = "40"
 # data = "validation"
 data = "train"
 
-# aplication = "home"
+aplication = "home"
 # aplication = "sns"
 # aplication = "game"
-aplication = "video"
+# aplication = "video"
 
 number = "1"
 
