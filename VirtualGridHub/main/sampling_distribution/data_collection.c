@@ -569,7 +569,7 @@ void main()
 	// printf("cheeropowerplus5 or pixel3a or ipadair4th or xperiaxz2compact : ");
 	// scanf("%s",&device);
 
-	for (int i = 0; i < loop_index; i++)
+	for (int i = 34; i < loop_index; i++)
 	{
 		flag_finish = main_vghub();
 
