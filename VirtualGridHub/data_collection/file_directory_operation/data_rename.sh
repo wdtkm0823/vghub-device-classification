@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # 対象ディレクトリのパスを指定します
-directory="/home/pi/Desktop/doyer/research/VirtualGridHub/devices_classify/eval_cwt/dataset_pdnego_20231024/train/cheeropowerplus5#1/"
+directory="/home/pi/Desktop/doyer/research/VirtualGridHub/devices_classify/eval_csv/dataset_pdnego_20231024/train/cheeropowerplus5#1/"
 
 # ディレクトリ内のファイルを順に処理します
 for file in "$directory"*xperiaxz2compact#1*; do
