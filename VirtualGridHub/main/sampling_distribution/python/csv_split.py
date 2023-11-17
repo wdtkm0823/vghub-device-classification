@@ -3,24 +3,8 @@ import pandas as pd
 import numpy as np
 import os
 
-device = "cheeropowerplus5#1"
-# device = "pixel3a#1"
-# device = "ipadair4th#1"
-# device = "xperiaxz2compact#1"
-
-soc = "70"
-
-# data = "test"
-# data = "validation"
-data = "train"
-
-app = "home"
-# app = "sns"
-# app = "game"
-# app = "video"
-
-# def make_path(output_name, i, soc, data, device, app):
-def make_path(output_name, index):
+def make_path(output_name, index, soc, data, app, device):
+# def make_path(output_name, index, soc, app):
     port_num = 7
     
     output_path = "python/output/"
@@ -28,7 +12,7 @@ def make_path(output_name, index):
     for i in range(port_num):
         #print(output_path+output_name+"_"+str(i)+".csv")
         if i == 3:  
-            output_paths.append(os.path.join(output_path,output_name+"_"+str(i)+"_"+device+"_"+"soc"+soc+"_"+app+"_"+data+"_"+index+".csv"))
+            output_paths.append(os.path.join(output_path,output_name+"_"+str(i)+"_"+device+"#1_"+"soc"+str(soc)+"_"+app+"_"+data+"_"+index+".csv"))
         else:
             output_paths.append(os.path.join(output_path,output_name+"_"+str(i)+".csv"))
     return output_paths
@@ -63,22 +47,23 @@ def input_csv(csv_input_path):
     return pd.read_csv(csv_input_path)
 
 def main():
-    print(os.getcwd())
+    os.getcwd
+    # print(os.getcwd())
     args = sys.argv
-    # args[1] #input csv 名 
-    print(args[1])
+    print()
+    print("ファイル名；",args[1])
     print("データ数：",args[2])
-    # print(args[3])
-    # print(args[4])
-    # print(args[5])
-    # print(args[6])
+    print("SOC： ", args[3])
+    print("データ：",args[4])
+    print("アプリケーション",args[5])
+    print("デバイス；",args[6])
     
     output_name = "output_" + args[1]
-    # output_paths = make_path(output_name, args[2], args[3], args[4], args[5], args[6])
-    output_paths = make_path(output_name, args[2])
+    output_paths = make_path(output_name, args[2], args[3], args[4], args[5], args[6])
+    # output_paths = make_path(output_name, args[2], args[3], args[4])
     csv_input_path = os.path.join("python","csv", args[1]+".csv")
     csv = input_csv(csv_input_path)
     convert_csv(csv, output_paths)
-    print("csv split DONE")
+    print(output_name + ".csv split DONE")
 
 main()

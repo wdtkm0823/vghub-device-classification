@@ -142,16 +142,16 @@ void displayQueue(VoltageQueue *queue)
 	}
 	else
 	{
-		printf("Queue Contents: ");
+		// printf("Queue Contents: ");
 		int i = queue->front;
 		int count = 0;
 		while (count < queue->size)
 		{
-			printf("%.2f ", queue->data[i].voltage);
+			// printf("%.2f ", queue->data[i].voltage);
 			i = (i + 1) % MAX_QUEUE_SIZE;
 			count++;
 		}
-		printf("\n");
+		// printf("\n");
 	}
 }
 
@@ -189,21 +189,20 @@ int write_csv_body(double d_sec, float count, PORT_VBUS_INFO *v_information, flo
 int write_csv_end(void)
 {
 	fclose(fp1);
-	printf("%sファイル書き込みが終わりました\n", fname1);
+	printf("\n");
+	printf("%sへのファイル書き込みが終わりました\n", fname1);
 	return 0;
 }
-
-// int call_python_csv_split(int i, int soc, char data, char device, char app)
-int call_python_csv_split(int i)
+int call_python_csv_split(int i, int soc, char *data, char *app, char *device)
+// int call_python_csv_split(int i, int soc, char *app)
 {
-	printf("call py csv_split\n");
-	char command1[100];
-	char command2[100];
+	printf("-------------------\n");
+	printf("#### call py csv_split ####\n");
+	char command1[200];
+	char command2[200];
 
-	// sprintf(command1, "python3 python/csv_split.py vghub_15s_data %d %d %s %s %s\n", i, soc, data, device, app);
-	// sprintf(command2, "python3 python/csv_split.py vghub_pdnego_data %d %d %s %s %s\n", i, soc, data, device, app);
-	sprintf(command1, "python3 python/csv_split.py vghub_15s_data %d", i);
-	sprintf(command2, "python3 python/csv_split.py vghub_pdnego_data %d", i);
+	snprintf(command1, sizeof(command1), "python3 python/csv_split.py vghub_15s_data %d %d %s %s %s\n", i, soc, data, app, device);
+	snprintf(command2, sizeof(command2), "python3 python/csv_split.py vghub_pdnego_data %d %d %s %s %s\n", i, soc, data, app, device);
 
 	system(command1);
 	system(command2);
@@ -220,7 +219,7 @@ int vghub_sampling()
 {
 	printf("\n");
 	float sampling_time = 0.01;
-	printf("-------------\n");
+	printf("--------------------\n");
 
 	write_csv_init();
 
@@ -276,7 +275,6 @@ int vghub_sampling()
 				output += watt[i];
 			}
 		}
-
 		printf("Input:  %dmW\nOutput: %dmW\nEfficiency: %f%\n\n", -input, output, -(double)output / (double)input * 100);
 
 		clock_gettime(CLOCK_REALTIME, &end_time);
@@ -285,7 +283,7 @@ int vghub_sampling()
 
 		d_sec = (double)sec + (double)nsec / (1000 * 1000 * 1000);
 
-		printf("time:%f\n", d_sec);
+		// printf("time:%f\n", d_sec);
 
 		count_time = count_time + sampling_time;
 		printf("経過時間 = %f\n", count_time);
@@ -304,7 +302,7 @@ int vghub_sampling()
 		if (v_information[3].Voltage > THRESHOLD_VOLTAGE)
 		{
 			current_slope = calculateSlope(&voltageQueue);
-			printf("Current Slope: %f\n", current_slope);
+			printf("現在の傾き：%f\n", current_slope);
 			if (previous_slope > 0 && current_slope <= 0)
 			{
 				flag_finish = index;
@@ -312,7 +310,6 @@ int vghub_sampling()
 			previous_slope = current_slope;
 		}
 		printf("Finish Flag: %d\n", flag_finish);
-
 		index++;
 	}
 
@@ -465,13 +462,13 @@ int vghub_power_rule()
 	sleep(1);
 
 	printf("#### Seted PortConfig ####\n");
-	printf("---------------------\n");
+	printf("--------------------\n");
 	// ポート情報を取得
 	for (int i = 0; i < N_PORT; i++)
 	{
 		getinformation[i] = VGHUBPD_GetPortInfo(i, &information[i]);
 	}
-	printf("---------------------\n");
+	printf("--------------------\n");
 	printf("getinfocheck:%d %d %d\n", getinformation[0], getinformation[1], getinformation[2]);
 	printf("Power Role\n");
 
@@ -490,7 +487,7 @@ int vghub_power_rule()
 		}
 	}
 
-	printf("---------------------\n");
+	printf("--------------------\n");
 
 	sleep(1);
 
@@ -508,7 +505,7 @@ int vghub_power_rule()
 			   i, information[i].SourceMaxPower, information[i].SinkMaxPower);
 	}
 
-	printf("---------------------\n");
+	printf("--------------------\n");
 
 	return 0;
 }
@@ -552,24 +549,24 @@ int main_vghub()
 void main()
 {
 	int loop_index, soc;
-	char data, device, app;
+	char data[20], device[20], app[20];
 
 	printf("何個データを作成しますか：");
 	scanf("%d",&loop_index);
 
-	// printf("SOC : ");
-	// scanf("%d",&soc);
+	printf("SOC : ");
+	scanf("%d",&soc);
 
-	// printf("test or validation or train : ");
-	// scanf("%s",&data);
+	printf("test or validation or train : ");
+	scanf("%s",&data);
 
-	// printf("home or sns or game or video : ");
-	// scanf("%s",&app);	
+	printf("home or sns or game or video : ");
+	scanf("%s",&app);	
 
-	// printf("cheeropowerplus5 or pixel3a or ipadair4th or xperiaxz2compact : ");
-	// scanf("%s",&device);
+	printf("cheeropowerplus5 or pixel3a or ipadair4th or xperiaxz2compact : ");
+	scanf("%s",&device);
 
-	for (int i = 34; i < loop_index; i++)
+	for (int i = 0; i < loop_index; i++)
 	{
 		flag_finish = main_vghub();
 
@@ -582,8 +579,9 @@ void main()
 
 		printf("flag_start: %d\nflag_finish: %d\n", flag_start, flag_finish);
 		copyCsvDataWithIndex(inputFileName, outputFileName, flag_finish, flag_start);
-		// call_python_csv_split(i+1, soc, data, device, app);
-		call_python_csv_split(i+1);
+		printf("\n");
+		call_python_csv_split(i+1, soc, data, app, device);
+		// call_python_csv_split(i+1, soc, app);
 		call_python();
 	}
 }
