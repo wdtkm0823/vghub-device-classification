@@ -7,7 +7,7 @@ source_folder="/home/pi/Desktop/doyer/research/VirtualGridHub/devices_classify/e
 
 read -p "test or validation or train : " data
 
-read -p "cheeropowerplus5 or pixel3a or ipadair4th or xperiaxz2compact : " device
+read -p "cheeropowerplus5 or googlepixel3a or ipadair4th or xperiaxz2compact : " device
 
 # 移動先のフォルダ
 destination_folder="/home/pi/Desktop/doyer/research/VirtualGridHub/devices_classify/eval_csv/dataset_${file}_20231024/${data}/${device}#1"
