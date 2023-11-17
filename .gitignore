@@ -1,2 +1,5 @@
 # すべての.ds_storeファイルを無視
 *.ds_store 
+# 計測する際の目的でなcsvファイルを無視
+vghub_*_data.csv
+outpu_vghub_*_data_#_.csv
