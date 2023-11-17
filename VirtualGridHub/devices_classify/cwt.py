@@ -9,13 +9,13 @@ from pandas.plotting import register_matplotlib_converters
 import glob
 from scipy import signal
 
-print("15s or pdnego : ")
+print("15s or pdnego : ", end="")
 file = input()
 
-print("test or validation or train : ")
+print("test or validation or train : ", end="")
 data = input()
 
-print("cheeropowerplus5 or pixel3a or ipadair4th or xperiaxz2compact : ")
+print("cheeropowerplus5 or googlepixel3a or ipadair4th or xperiaxz2compact : ", end="")
 device = input()
 
 ROOT_DIR = f'/home/pi/Desktop/doyer/research/VirtualGridHub/devices_classify/eval_csv/dataset_{file}_20231024/cwt'
