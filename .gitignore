@@ -1,4 +1,2 @@
 # すべての.ds_storeファイルを無視
 *.ds_store 
-*_data.csv
-*_data_?.csv
