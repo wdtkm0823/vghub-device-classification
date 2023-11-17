@@ -1,4 +1,3 @@
 # すべての.ds_storeファイルを無視
 *.ds_store 
 # 計測する際の目的でなcsvファイルを無視
-/home/pi/Desktop/doyer/research/VirtualGridHub/main/sampling_distribution/python/output/*
