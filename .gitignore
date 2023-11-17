@@ -1,5 +1,8 @@
 # すべての.ds_storeファイルを無視
 *.ds_store 
 # 計測する際の目的でなcsvファイルを無視
-vghub_*_data.csv
-outpu_vghub_*_data_#_.csv
+output_vghub_15s_data_*.csv
+output_vghub_pdnego_data_*.csv
+vghub_15s_data.csv
+vghub_pdnego_data.csv
+
