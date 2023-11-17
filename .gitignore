@@ -1,4 +1,4 @@
 # すべての.ds_storeファイルを無視
 *.ds_store 
-VirtualGridHub/main/sampling_distribution/python/csv/vghub_*_data.csv
-VirtualGridHub/main/sampling_distribution/python/output/output_vghub_*_data_?.csv
+*_data.csv
+*_data_?.csv
