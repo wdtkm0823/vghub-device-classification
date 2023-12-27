@@ -37,6 +37,7 @@ USB-PDに準拠したUSB Type-Cに接続されたデバイス情報の取得
 <!-- Treeコマンドを使ってディレクトリ構成を記載 -->
 
 ❯ tree -a -I "node_modules|.next|.git|.pytest_cache|static" -L 2
+```
 .  
 ├── .DS_Store  
 ├── .gitignore  
@@ -61,7 +62,7 @@ USB-PDに準拠したUSB Type-Cに接続されたデバイス情報の取得
     ├── csv  
     ├── googlepixel3a#1.ipynb  
     └── ipadair4th#1.ipynb  
-
+```
 <p align="right">(<a href="#top">トップへ</a>)</p>
 
 ## 開発環境構築
