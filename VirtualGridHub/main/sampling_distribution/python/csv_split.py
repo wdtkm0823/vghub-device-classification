@@ -51,12 +51,12 @@ def main():
     # print(os.getcwd())
     args = sys.argv
     print()
-    print("ファイル名；",args[1])
-    print("データ数：",args[2])
-    print("SOC： ", args[3])
-    print("データ：",args[4])
-    print("アプリケーション",args[5])
-    print("デバイス；",args[6])
+    print("File name: ",args[1])
+    print("Number of data: ",args[2])
+    print("SOC: ", args[3])
+    print("Data: ",args[4])
+    print("Application: ",args[5])
+    print("Device: ",args[6])
     
     output_name = "output_" + args[1]
     output_paths = make_path(output_name, args[2], args[3], args[4], args[5], args[6])
