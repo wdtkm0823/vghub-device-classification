@@ -563,7 +563,7 @@ void main()
 	printf("home or sns or game or video : ");
 	scanf("%s",&app);	
 
-	printf("cheeropowerplus5 or pixel3a or ipadair4th or xperiaxz2compact : ");
+	printf("cheeropowerplus5 or cheeropowermountain or pixel3a or ipadair4th or xperiaxz2compact : ");
 	scanf("%s",&device);
 
 	for (int i = 0; i < loop_index; i++)
