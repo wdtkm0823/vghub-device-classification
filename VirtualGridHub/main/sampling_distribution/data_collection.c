@@ -278,8 +278,6 @@ int vghub_sampling()
 
 		d_sec = (double)sec + (double)nsec / (1000 * 1000 * 1000);
 
-		// printf("time:%f\n", d_sec);
-
 		count_time = count_time + sampling_time;
 		printf("Elapsed time = %f\n", count_time);
 
@@ -401,7 +399,6 @@ int SetPowerPole(PORT_ID portID, uint8_t Role)
 	VGHUBPD_STATUS getinformation;
 	VGHUBPD_STATUS SWAPC = -1;
 	getinformation = VGHUBPD_GetPortInfo(portID, &information);
-	// printf("RoleCheck: %d %d %d\n",portID , information.PowerRole , Role);
 
 	// informationは向こう側のRole SWAPはこちら側のRole
 	if (information.PowerRole == Role)
