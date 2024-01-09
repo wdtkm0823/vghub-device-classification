@@ -98,7 +98,6 @@ int calculateSlope(VoltageQueue *queue)
 		return 0; // キューが満たされていない場合、0を返す（エラー値）
 	}
 
-	// 以降のコードは変更なし
 	float sumX = 0.0;
 	float sumY = 0.0;
 	float sumXY = 0.0;
@@ -142,16 +141,13 @@ void displayQueue(VoltageQueue *queue)
 	}
 	else
 	{
-		// printf("Queue Contents: ");
 		int i = queue->front;
 		int count = 0;
 		while (count < queue->size)
 		{
-			// printf("%.2f ", queue->data[i].voltage);
 			i = (i + 1) % MAX_QUEUE_SIZE;
 			count++;
 		}
-		// printf("\n");
 	}
 }
 
@@ -161,7 +157,7 @@ int write_csv_init(void)
 
 	if (fp1 == NULL)
 	{
-		printf("%sファイルが開けません\n", fname1);
+		printf("I can't open the %s file\n", fname1);
 		return -1;
 	}
 	// title
@@ -190,11 +186,10 @@ int write_csv_end(void)
 {
 	fclose(fp1);
 	printf("\n");
-	printf("%sへのファイル書き込みが終わりました\n", fname1);
+	printf("Finished writing file to %s\n", fname1);
 	return 0;
 }
 int call_python_csv_split(int i, int soc, char *data, char *app, char *device)
-// int call_python_csv_split(int i, int soc, char *app)
 {
 	printf("-------------------\n");
 	printf("#### call py csv_split ####\n");
@@ -286,7 +281,7 @@ int vghub_sampling()
 		// printf("time:%f\n", d_sec);
 
 		count_time = count_time + sampling_time;
-		printf("経過時間 = %f\n", count_time);
+		printf("Elapsed time = %f\n", count_time);
 
 		write_csv_body(d_sec, count_time, v_information, current_slope);
 
@@ -302,7 +297,7 @@ int vghub_sampling()
 		if (v_information[3].Voltage > THRESHOLD_VOLTAGE)
 		{
 			current_slope = calculateSlope(&voltageQueue);
-			printf("現在の傾き：%f\n", current_slope);
+			printf("Current slope: %f\n", current_slope);
 			if (previous_slope > 0 && current_slope <= 0)
 			{
 				flag_finish = index;
@@ -326,7 +321,7 @@ void copyCsvDataWithIndex(const char *inputFileName, const char *outputFileName,
 
 	if (inputFile == NULL || outputFile == NULL)
 	{
-		printf("ファイルを開けません\n");
+		printf("Cannot open file.\n");
 		return;
 	}
 
@@ -353,7 +348,7 @@ void copyCsvDataWithIndex(const char *inputFileName, const char *outputFileName,
 	fclose(inputFile);
 	fclose(outputFile);
 
-	printf("データをコピーしました\n");
+	printf("Data copied.\n");
 }
 
 int findIndexExceedingValue(const char *fileName, int columnIndex, int threshold)
@@ -551,7 +546,7 @@ void main()
 	int loop_index, soc;
 	char data[20], device[20], app[20];
 
-	printf("何個データを作成しますか：");
+	printf("How many pieces of data do you want to create?：");
 	scanf("%d",&loop_index);
 
 	printf("SOC : ");
