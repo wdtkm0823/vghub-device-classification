@@ -10,6 +10,9 @@
 #### Windowsの場合
 `. visualization\Scripts\activate`
 
+### パッケージのインストール  
+`pip install -r requirements.txt`
+
 ## pip list
 ```
 Package           Version
