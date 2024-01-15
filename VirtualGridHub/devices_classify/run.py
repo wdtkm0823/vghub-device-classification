@@ -46,28 +46,14 @@ tf.random.set_seed(RANDOM_SEED)
 
 def my_model_load():
     input_tensor = Input(shape=(img_rows, img_cols, 3))
-    vgg16 = VGG16(include_top=False, 
-                  #weights='imagenet',
-                  #weights = '../imagenet/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5',
-                  weights=None,
-                  input_tensor=input_tensor)
-    #vgg16.summary()
+    vgg16 = VGG16(include_top=False, weights=None, input_tensor=input_tensor)
     top_model = Sequential()
-    #model.add(vgg16)
-    #model.add(Flatten())
     top_model.add(Flatten(input_shape=vgg16.output_shape[1:]))
     top_model.add(Dense(256, activation='relu'))
     top_model.add(Dropout(0.5))
     top_model.add(Dense(nb_classes, activation='softmax'))
     model = Model(inputs=vgg16.input, outputs=top_model(vgg16.output))
-    #model.summary()
-    #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep300.hdf5'))#これホントはMatlabの画像だった
-    #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep150_20211212.hdf5'))#epoch 150 のPython figure #bad
-    #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep300_20211212.hdf5'))#epoch 300 のPython figure #good?
-    #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep500_20211212.hdf5'))#epoch 500 のPython figure #bad
-    #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep150_20211218.hdf5'))#epoch 150 のPython figure #soso?
-    #model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep300_20211218.hdf5'))#epoch 300 のPython figure #bad
-    model.load_weights(os.path.join('model', 'model_pixel_pythonfigure_ep500_20211218.hdf5'))#epoch 500 のPython figure # good?
+    model.load_weights(os.path.join('model', 'VirtualGridHub/devices_classify/model/product_classify_cwt_cnn_pdnego_ep50_ba32.hdf5'))
     return model
 
 # 一つのcsvファイルから VBUS V I W  を返す
@@ -82,15 +68,6 @@ def ImportCSVandConvertDF(FILE):
     npdata_C
     npdata_W=data_W.values
     npdata_W
-    #a='test_a'
-    #overlaped_data_V=Reshape2OverlapedData(npdata_V, 128)
-    #np.savetxt('test_data/'+a+'_ax.txt', overlaped_data_V,delimiter=',',fmt="%0.10f")
-    #overlaped_data_C=Reshape2OverlapedData(npdata_C, 128)
-    #np.savetxt('test_data/'+a+'_ay.txt', overlaped_data_C,delimiter=',',fmt="%0.10f")
-    #overlaped_data_W=Reshape2OverlapedData(npdata_W, 128)
-    #np.savetxt('test_data/'+a+'_az.txt', overlaped_data_W,delimiter=',',fmt="%0.10f")
-    #print('end')
-    #return overlaped_data_V, overlaped_data_C, overlaped_data_W
     return npdata_W
 
 '''# wattage を CWT変換
@@ -188,11 +165,10 @@ nb_classes = len(classes)
 img_rows, img_cols = 224, 224
 
 def predict():
-    
     root_a_path=[]
     root_a_path.extend(glob.glob(os.path.join(ROOT_DIR, TARGET_PATTERN)))
     root_a_test_path = root_a_path
-    #csv から　cwt の画像を生成し，データセットに保存
+    #csvからcwtの画像を生成し，データセットに保存
     #make_cwt_dataset(root_a_test_path, SAVEPATH)
     filename = glob.glob(os.path.join(SAVEPATH, '*.png'))
     model = my_model_load()
@@ -207,7 +183,5 @@ def predict():
             y = pre.argmax()
             print("filename =", target)
             print("test result =",classes[y], pre)
-        
-
 
 predict()
