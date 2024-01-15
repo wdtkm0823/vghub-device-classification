@@ -1,2 +1,2 @@
-# すべての.ds_storeファイルを無視
+# .DS_Store files
 *.ds_store 
