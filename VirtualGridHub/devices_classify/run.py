@@ -52,28 +52,7 @@ def my_model_load():
     top_model.add(Dropout(0.5))
     top_model.add(Dense(nb_classes, activation='softmax'))
     model = Model(inputs=vgg16.input, outputs=top_model(vgg16.output))
-
-    try:
-        model.load_weights(os.path.join('model', 'devices_classify_cwt_cnn_pdnego_ep10_ba32.hdf5'), by_name=True)
-    except ValueError as e:
-        print(f"重みの読み込みエラー: {e}")
-        print("モデルのアーキテクチャを更新して再試行しています...")
-        # 保存された重みのレイヤー数に合わせてアーキテクチャを変更
-        model = my_model_load_updated()
-        model.load_weights(os.path.join('model', 'devices_classify_cwt_cnn_pdnego_ep10_ba32.hdf5'), by_name=True)
-
-    return model
-
-def my_model_load_updated():
-    # 保存された重みのレイヤー数に基づいてモデルのアーキテクチャを変更
-    input_tensor = Input(shape=(img_rows, img_cols, 3))
-    vgg16 = VGG16(include_top=False, weights=None, input_tensor=input_tensor)
-    top_model = Sequential()
-    top_model.add(Flatten(input_shape=vgg16.output_shape[1:]))
-    top_model.add(Dense(256, activation='relu'))
-    top_model.add(Dropout(0.5))
-    top_model.add(Dense(nb_classes, activation='softmax'))
-    model = Model(inputs=vgg16.input, outputs=top_model(vgg16.output))
+    model.load_weights(os.path.join('model', 'devices_classify_cwt_cnn_pdnego_ep10_ba32.hdf5'), by_name=True)
     return model
 
 # 一つのcsvファイルから VBUS V I W  を返す
@@ -89,48 +68,6 @@ def ImportCSVandConvertDF(FILE):
     npdata_W=data_W.values
     npdata_W
     return npdata_W
-
-'''# wattage を CWT変換
-def calcuate_cwt(sig):
-    widths = np.arange(1, 31)
-    cwtmatr = signal.cwt(sig, signal.ricker, widths)
-    return cwtmatr'''
-
-'''#CWTを画像で保存
-def plot_cwt_save(cwtmatr_,figure_size,SAVEPATH,FILENAME):
-    #figure_size=(50,50)
-    plt.figure(figsize=figure_size)
-    #plt.imshow(cwtmatr_, extent=[-1, 1, 1, 31], cmap='gray', aspect='auto',
-    #          vmax=abs(cwtmatr_).max(), vmin=-abs(cwtmatr_).max())
-    plt.imshow(cwtmatr_, extent=[-1, 1, 1, 31], cmap='gray', aspect='auto')
-    plt.axis("off")
-    plt.show()#kore wo kesuto dame
-    plt.savefig(SAVEPATH+'/'+FILENAME+'.png')
-    
-    plt.close('all')'''
-
-def plot_cwt_save(cwtmatr_,figure_size,SAVEPATH,FILENAME):
-    #figure_size=(10,10)
-    fig, ax = plt.subplots(figsize=figure_size)
-    #plt.figure(figsize=figure_size)
-    #plt.imshow(cwtmatr_, extent=[-1, 1, 1, 31], cmap='gray', aspect='auto',
-    #           vmax=abs(cwtmatr_).max(), vmin=-abs(cwtmatr_).max())
-    plt.imshow(cwtmatr_, extent=[-1, 1, 1, 31], cmap='gray', aspect='auto')
-    plt.axis("off")
-    #fig.subplots_adjust(left=0, right=1, bottom=0, top=1) #この1行を入れる
-    #plt.show()
-    plt.savefig(SAVEPATH+'/'+FILENAME+'.png',dpi=20)
-    plt.close('all')
-
-'''#データセット分の画像を生成
-def make_cwt_dataset(data_path, save_a_path):
-    for j, d in enumerate(data_path):
-        w = ImportCSVandConvertDF(d)
-        #print(j)
-        cwt_arr=calcuate_cwt(w)
-        figure_size=(50,50)
-        plot_cwt_save(cwt_arr,figure_size,save_a_path,str(j))
-    print('CWT DATASET DONE...')'''
 
 # ricker ウェーブレット
 def calcuate_cwt_ricker(sig):
@@ -155,8 +92,6 @@ def plot_cwt_save(cwtmatr_,figure_size,SAVEPATH,FILENAME):
     plt.axis("off")
     plt.savefig(SAVEPATH+'/'+FILENAME+'.png')
     plt.close('all')
-
-
 
 ROOT_DIR = 'eval_csv'
 TARGET_PATTERN = "**.csv"
@@ -188,7 +123,13 @@ def predict():
         predict = model.predict(preprocess_input(x))
         for pre in predict:
             y = pre.argmax()
-            print("filename =", target)
-            print("test result =",classes[y], pre)
+            class_name = classes[y]
+            confidence = pre[y] * 100  # 信頼度をパーセントに変換
+            print(f"ファイル名 = {target}")
+            print(f"予測クラス = {class_name}")
+            print(f"信頼度 = {confidence:.2f}%")
+            print("各クラスの確率:")
+            for i, prob in enumerate(pre):
+                print(f"{classes[i]}: {prob * 100:.2f}%")
 
 predict()
