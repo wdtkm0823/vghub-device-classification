@@ -1,2 +1,5 @@
 # .DS_Store files
 *.ds_store 
+
+# Python virtual environment
+VirtualGridHub/devices_classify/venv
