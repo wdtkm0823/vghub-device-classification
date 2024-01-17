@@ -84,7 +84,7 @@ def plot_cwt_save(cwtmatr_,figure_size,SAVEPATH,FILENAME):
     plt.xlabel("Time[s]")
     plt.ylabel("Frequency[Hz]")
     plt.axis("off")
-    plt.savefig(os.path.join(SAVEPATH, FILENAME + '.png'))
+    plt.savefig(SAVEPATH+'/'+FILENAME+'.png')
     plt.close('all')
 
 ROOT_DIR = 'eval_csv'
