@@ -4,6 +4,7 @@ import pandas as pd
 import seaborn as sns
 from pylab import rcParams
 import matplotlib.pyplot as plt
+from matplotlib import rc
 from pandas.plotting import register_matplotlib_converters
 import glob
 from scipy import signal
@@ -23,6 +24,8 @@ SAVEPATH = f'/home/pi/Desktop/doyer/research/VirtualGridHub/devices_classify/eva
 
 register_matplotlib_converters()
 sns.set(style='whitegrid', palette='muted', font_scale=1.5)
+
+rcParams['figure.figsize'] = 22, 10
 
 #データセット分の画像を生成
 def make_cwt_dataset(data_path, save_a_path):
