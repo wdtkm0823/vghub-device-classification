@@ -9,7 +9,7 @@ from pandas.plotting import register_matplotlib_converters
 import glob
 from scipy import signal
 
-print("which method, 15s or pdnego? : ", end="")
+print("which method it it, 15s or pdnego? : ", end="")
 method = input()
 
 print("Which data set is it, test or validation or train? : ", end="")
