@@ -20,14 +20,14 @@ esac
 source_folder="/home/pi/Desktop/doyer/research/VirtualGridHub/devices_classify/eval_csv/dataset_${method}_20231024/cwt"
 
 # Ask for the dataset
-read -p "1: test\n2: train\n3: validation\nEnter the option number: " dataset_number
+read -p "1: test\2: train\3: validation\Enter the option number: " dataset_number
 
 case $dataset_number in
     1)
         dataset="test"
         ;;
     2)
-        dataset="traqin"
+        dataset="train"
         ;;
     3)
         dataset="validation"
@@ -39,7 +39,7 @@ case $dataset_number in
 esac
 
 # Ask for the device
-read -p "1: cheeropowermountain\n2: cheeropowerplus5\n3: pixel3a\n4: ipadair4th\n5: omnichargeomni20+\n6: xperiaxz2compact\nEnter the option number: " device_number
+read -p "1: cheeropowermountain\2: cheeropowerplus5\3: pixel3a\4: ipadair4th\5: omnichargeomni20+\6: xperiaxz2compact\Enter the option number: " device_number
 
 case $device_number in
     1)
