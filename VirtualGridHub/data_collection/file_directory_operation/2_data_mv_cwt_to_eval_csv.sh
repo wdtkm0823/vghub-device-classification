@@ -1,15 +1,72 @@
 #!/bin/bash
 
-read -p "which method it it, 15s or pdnego? : " method
+# Ask for the method
+read -p "Which method is it, 1 for 15s or 2 for pdnego? : " method_number
 
-# The folder from which to move the file.
+case $method_number in
+    1)
+        method="15s"
+        ;;
+    2)
+        method="pdnego"
+        ;;
+    *)
+        echo "Invalid option for method."
+        exit 1
+        ;;
+esac
+
+# Set the source folder based on the method
 source_folder="/home/pi/Desktop/doyer/research/VirtualGridHub/devices_classify/eval_csv/dataset_${method}_20231024/cwt"
 
-read -p "Which data set is it, test or validation or train? : " dataset
+# Ask for the dataset
+read -p "Which data set is it, 1 for test, 2 for validation, or 3 for train? : " dataset_number
 
-read -p "Which device is it, cheeropowerplus5 or cheeropowermountain or omnichargeomni20+ or googlepixel3a or ipadair4th or xperiaxz2compact? : " device
+case $dataset_number in
+    1)
+        dataset="test"
+        ;;
+    2)
+        dataset="validation"
+        ;;
+    3)
+        dataset="train"
+        ;;
+    *)
+        echo "Invalid option for dataset."
+        exit 1
+        ;;
+esac
 
-# The folder to which to move the file.
+# Ask for the device
+read -p "Which device is it, 1 for cheeropowerplus5, 2 for cheeropowermountain, 3 for omnichargeomni20+, 4 for googlepixel3a, 5 for ipadair4th, 6 for xperiaxz2compact? : " device_number
+
+case $device_number in
+    1)
+        device="cheeropowerplus5"
+        ;;
+    2)
+        device="cheeropowermountain"
+        ;;
+    3)
+        device="omnichargeomni20+"
+        ;;
+    4)
+        device="googlepixel3a"
+        ;;
+    5)
+        device="ipadair4th"
+        ;;
+    6)
+        device="xperiaxz2compact"
+        ;;
+    *)
+        echo "Invalid option for device."
+        exit 1
+        ;;
+esac
+
+# Set the destination folder based on method, dataset, and device
 destination_folder="/home/pi/Desktop/doyer/research/VirtualGridHub/devices_classify/eval_csv/dataset_${method}_20231024/${dataset}/${device}#1"
 
 # Move files matching the pattern to the destination folder.

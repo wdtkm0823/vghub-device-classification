@@ -540,8 +540,8 @@ int main_vghub()
 
 void main()
 {
-	int loop_index, soc;
-	char data[20], device[20], app[20];
+	int loop_index, soc, dataOption, appOption, deviceOption;
+	char data[20], app[20], device[20];
 
 	printf("How many pieces of data do you want to create?：");
 	scanf("%d",&loop_index);
@@ -549,14 +549,52 @@ void main()
 	printf("SOC : ");
 	scanf("%d",&soc);
 
-	printf("test or validation or train : ");
-	scanf("%s",&data);
+	printf("1: test\n2: train\n3: validation\nEnter the option number: ");
+  scanf("%d", &dataOption);
+	if (dataOption == 1) {
+		strcpy(data, "test");
+  } else if (dataOption == 2) {
+		strcpy(data, "train");
+  } else if (dataOption == 3) {
+		strcpy(data, "validation");
+  } else {
+		printf("Invalid option for data.\n");
+		return 0;
+  }
 
-	printf("home or sns or game or video : ");
-	scanf("%s",&app);	
+	printf("1: game\n2: home\n3: sns\n4: video\nEnter the option number: ");
+	scanf("%d",&appOption);
+	if (appOption == 1) {
+		strcpy(app, "game");
+	} else if (appOption == 2) {
+		strcpy(app, "home");
+	} else if (appOption == 3) {
+		strcpy(app, "sns");
+	} else if (appOption == 4) {
+		strcpy(app, "video");
+	} else {
+		printf("Invalid option for app.\n");
+		return 0;
+	}
 
-	printf("cheeropowerplus5 or cheeropowermountain or omnichargeomni20+ or pixel3a or ipadair4th or xperiaxz2compact : ");
-	scanf("%s",&device);
+	printf("1: cheeropowermountain\n2: cheeropowerplus5\n3: pixel3a\n4: ipadair4th\n5: omnichargeomni20+\n6: xperiaxz2compact\nEnter the option number: ");
+	scanf("%d",&deviceOption);
+	if (deviceOption == 1) {
+		strcpy(device, "cheeropowermountain");
+	} else if (deviceOption == 2) {
+		strcpy(device, "cheeropowerplus5");
+	} else if (deviceOption == 3) {
+		strcpy(device, "pixel3a");
+	} else if (deviceOption == 4) {
+		strcpy(device, "ipadair4th");
+	} else if (deviceOption == 5) {
+		strcpy(device, "omnichargeomni20+");
+	} else if (deviceOption == 6) {
+		strcpy(device, "xperiaxz2compact");
+	} else {
+		printf("Invalid option for device.\n");
+		return 0;
+	}
 
 	for (int i = 0; i < loop_index; i++)
 	{
