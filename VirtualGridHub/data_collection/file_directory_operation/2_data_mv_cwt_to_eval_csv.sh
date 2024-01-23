@@ -27,10 +27,10 @@ case $dataset_number in
         dataset="test"
         ;;
     2)
-        dataset="validation"
+        dataset="traqin"
         ;;
     3)
-        dataset="train"
+        dataset="validation"
         ;;
     *)
         echo "Invalid option for dataset."
@@ -39,7 +39,7 @@ case $dataset_number in
 esac
 
 # Ask for the device
-read -p "Which device is it, 1 for cheeropowerplus5, 2 for cheeropowermountain, 3 for omnichargeomni20+, 4 for googlepixel3a, 5 for ipadair4th, 6 for xperiaxz2compact? : " device_number
+read -p "1: cheeropowermountain\n2: cheeropowerplus5\n3: pixel3a\n4: ipadair4th\n5: omnichargeomni20+\n6: xperiaxz2compact\nEnter the option number: " device_number
 
 case $device_number in
     1)
@@ -49,13 +49,13 @@ case $device_number in
         device="cheeropowermountain"
         ;;
     3)
-        device="omnichargeomni20+"
+        device="pixel3a"
         ;;
     4)
-        device="googlepixel3a"
+        device="ipadair4th"
         ;;
     5)
-        device="ipadair4th"
+        device="omnichargeomni20+"
         ;;
     6)
         device="xperiaxz2compact"
