@@ -16,7 +16,7 @@ def get_device_info(device):
         manufacturer = handle.getString(device.iManufacturer, 256)
         print(f"Product: {product}, Manufacturer: {manufacturer}")
     finally:
-        handle.release()
+        handle.releaseInterface()
 
 def main():
     all_devices = get_all_usb_devices()
