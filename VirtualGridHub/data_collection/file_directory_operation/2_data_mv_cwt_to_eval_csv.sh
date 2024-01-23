@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Ask for the method
-read -p "Which method is it, 1 for 15s or 2 for pdnego? : " method_number
+read -p "1: 15s\n2: pdnego\nEnter the option number: " method_number
 
 case $method_number in
     1)
@@ -20,7 +20,7 @@ esac
 source_folder="/home/pi/Desktop/doyer/research/VirtualGridHub/devices_classify/eval_csv/dataset_${method}_20231024/cwt"
 
 # Ask for the dataset
-read -p "Which data set is it, 1 for test, 2 for validation, or 3 for train? : " dataset_number
+read -p "1: test\n2: train\n3: validation\nEnter the option number: " dataset_number
 
 case $dataset_number in
     1)

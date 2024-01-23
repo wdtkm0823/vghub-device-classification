@@ -10,7 +10,7 @@ import glob
 from scipy import signal
 
 method_options = {1: "15s", 2: "pdnego"}
-dataset_options = {1: "test", 2: "validation", 3: "train"}
+dataset_options = {1: "test", 2: "train", 3: "validation"}
 device_options = {
     1: "cheeropowerplus5",
     2: "cheeropowermountain",
