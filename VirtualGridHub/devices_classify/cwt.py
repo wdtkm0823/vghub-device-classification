@@ -15,7 +15,7 @@ method = input()
 print("Which data set is it, test or validation or train? : ", end="")
 dataset = input()
 
-print("Which device is it, cheeropowerplus5 or cheeropowermountain or omni20+ or googlepixel3a or ipadair4th or xperiaxz2compact? : ", end="")
+print("Which device is it, cheeropowerplus5 or cheeropowermountain or omnichargeomni20+ or googlepixel3a or ipadair4th or xperiaxz2compact? : ", end="")
 device = input()
 
 ROOT_DIR = f'/home/pi/Desktop/doyer/research/VirtualGridHub/devices_classify/eval_csv/dataset_{method}_20231024/cwt'
