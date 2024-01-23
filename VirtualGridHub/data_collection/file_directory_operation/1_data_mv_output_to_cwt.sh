@@ -3,9 +3,23 @@
 # The folder from which to move the file.
 source_folder="/home/pi/Desktop/doyer/research/VirtualGridHub/main/sampling_distribution/python/output"
 
-read -p "which method it it, 15s or pdnego? : " method
+# Ask for the method
+read -p "Which method is it, 1 for 15s or 2 for pdnego? : " method_number
 
-# The folder to which to move the file.
+case $method_number in
+    1)
+        method="15s"
+        ;;
+    2)
+        method="pdnego"
+        ;;
+    *)
+        echo "Invalid option for method."
+        exit 1
+        ;;
+esac
+
+# Set the source folder based on the method
 destination_folder="/home/pi/Desktop/doyer/research/VirtualGridHub/devices_classify/eval_csv/dataset_${method}_20231024/cwt"
 
 # Move files matching the pattern to the destination folder.
