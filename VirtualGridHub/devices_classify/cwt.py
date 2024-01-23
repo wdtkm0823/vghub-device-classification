@@ -21,21 +21,21 @@ device_options = {
 }
 
 # Ask for the method
-method_option = int(input("Which method is it, 1 for 15s or 2 for pdnego? : "))
+method_option = int(input("1: 15s\n2: pdnego\nEnter the option number: "))
 method = method_options.get(method_option)
 if method is None:
     print("Invalid option for method.")
     exit(1)
 
 # Ask for the dataset
-dataset_option = int(input("Which data set is it, 1 for test, 2 for validation, or 3 for train? : "))
+dataset_option = int(input("1: test\n2: train\n3: validation\nEnter the option number: "))
 dataset = dataset_options.get(dataset_option)
 if dataset is None:
     print("Invalid option for dataset.")
     exit(1)
 
 # Ask for the device
-device_option = int(input("Which device is it, 1 for cheeropowerplus5, 2 for cheeropowermountain, 3 for omnichargeomni20+, 4 for googlepixel3a, 5 for ipadair4th, 6 for xperiaxz2compact? : "))
+device_option = int(input("1: cheeropowermountain\n2: cheeropowerplus5\n3: pixel3a\n4: ipadair4th\n5: omnichargeomni20+\n6: xperiaxz2compact\nEnter the option number: "))
 device = device_options.get(device_option)
 if device is None:
     print("Invalid option for device.")
