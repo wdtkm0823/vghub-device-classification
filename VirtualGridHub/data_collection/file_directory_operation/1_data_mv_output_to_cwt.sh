@@ -15,7 +15,7 @@ case $method_number in
         ;;
     *)
         echo "Invalid option for method."
-        exit 1
+        exit 0
         ;;
 esac
 

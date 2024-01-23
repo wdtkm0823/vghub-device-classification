@@ -9,14 +9,37 @@ from pandas.plotting import register_matplotlib_converters
 import glob
 from scipy import signal
 
-print("which method it it, 15s or pdnego? : ", end="")
-method = input()
+method_options = {1: "15s", 2: "pdnego"}
+dataset_options = {1: "test", 2: "validation", 3: "train"}
+device_options = {
+    1: "cheeropowerplus5",
+    2: "cheeropowermountain",
+    3: "omnichargeomni20+",
+    4: "googlepixel3a",
+    5: "ipadair4th",
+    6: "xperiaxz2compact"
+}
 
-print("Which data set is it, test or validation or train? : ", end="")
-dataset = input()
+# Ask for the method
+method_option = int(input("Which method is it, 1 for 15s or 2 for pdnego? : "))
+method = method_options.get(method_option)
+if method is None:
+    print("Invalid option for method.")
+    exit(1)
 
-print("Which device is it, cheeropowerplus5 or cheeropowermountain or omnichargeomni20+ or googlepixel3a or ipadair4th or xperiaxz2compact? : ", end="")
-device = input()
+# Ask for the dataset
+dataset_option = int(input("Which data set is it, 1 for test, 2 for validation, or 3 for train? : "))
+dataset = dataset_options.get(dataset_option)
+if dataset is None:
+    print("Invalid option for dataset.")
+    exit(1)
+
+# Ask for the device
+device_option = int(input("Which device is it, 1 for cheeropowerplus5, 2 for cheeropowermountain, 3 for omnichargeomni20+, 4 for googlepixel3a, 5 for ipadair4th, 6 for xperiaxz2compact? : "))
+device = device_options.get(device_option)
+if device is None:
+    print("Invalid option for device.")
+    exit(1)
 
 ROOT_DIR = f'/home/pi/Desktop/doyer/research/VirtualGridHub/devices_classify/eval_csv/dataset_{method}_20231024/cwt'
 TARGET_PATTERN = "**.csv"

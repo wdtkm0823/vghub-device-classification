@@ -12,7 +12,7 @@ case $method_number in
         ;;
     *)
         echo "Invalid option for method."
-        exit 1
+        exit 0
         ;;
 esac
 
@@ -34,7 +34,7 @@ case $dataset_number in
         ;;
     *)
         echo "Invalid option for dataset."
-        exit 1
+        exit 0
         ;;
 esac
 
@@ -62,7 +62,7 @@ case $device_number in
         ;;
     *)
         echo "Invalid option for device."
-        exit 1
+        exit 0
         ;;
 esac
 
