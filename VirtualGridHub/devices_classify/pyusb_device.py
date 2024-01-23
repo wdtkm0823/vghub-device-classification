@@ -14,23 +14,7 @@ def get_device_info(device):
         handle = device.open()
         product = handle.getString(device.iProduct, 256)
         manufacturer = handle.getString(device.iManufacturer, 256)
-
-        # Debugging: Print product and manufacturer before encoding
-        print("Raw Product:", product)
-        print("Raw Manufacturer:", manufacturer)
-
-        # Check if product and manufacturer are not None before encoding
-        if product is not None:
-            product = product.encode('utf-8')
-        else:
-            product = b"Unknown Product"
-
-        if manufacturer is not None:
-            manufacturer = manufacturer.encode('utf-8')
-        else:
-            manufacturer = b"Unknown Manufacturer"
-
-        print("Product: {}, Manufacturer: {}".format(product.decode('utf-8'), manufacturer.decode('utf-8')))
+        print("Product: {}, Manufacturer: {}".format(product, manufacturer))
     finally:
         handle.releaseInterface()
 
