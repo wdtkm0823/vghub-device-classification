@@ -14,7 +14,7 @@ def get_device_info(device):
         handle = device.open()
         product = handle.getString(device.iProduct, 256)
         manufacturer = handle.getString(device.iManufacturer, 256)
-        print(f"Product: {product}, Manufacturer: {manufacturer}")
+        print("Product: {}, Manufacturer: {}".format(product, manufacturer))
     finally:
         handle.releaseInterface()
 
@@ -27,7 +27,7 @@ def main():
             if e.errno == 13:
                 print("Access denied. Try running the script with sudo.")
             else:
-                print(f"USBError: {e}")
+                print("USBError: {}".format(e))
 
 if __name__ == '__main__':
     main()
