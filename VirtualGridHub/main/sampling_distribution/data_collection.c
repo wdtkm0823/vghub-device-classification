@@ -559,7 +559,7 @@ void main()
 		strcpy(data, "validation");
   } else {
 		printf("Invalid option for data.\n");
-		return 0;
+		// return 0;
   }
 
 	printf("1: game\n2: home\n3: sns\n4: video\nEnter the option number: ");
@@ -574,7 +574,7 @@ void main()
 		strcpy(app, "video");
 	} else {
 		printf("Invalid option for app.\n");
-		return 0;
+		// return 0;
 	}
 
 	printf("1: cheeropowermountain\n2: cheeropowerplus5\n3: pixel3a\n4: ipadair4th\n5: omnichargeomni20+\n6: xperiaxz2compact\nEnter the option number: ");
@@ -593,7 +593,7 @@ void main()
 		strcpy(device, "xperiaxz2compact");
 	} else {
 		printf("Invalid option for device.\n");
-		return 0;
+		// return 0;
 	}
 
 	for (int i = 0; i < loop_index; i++)
