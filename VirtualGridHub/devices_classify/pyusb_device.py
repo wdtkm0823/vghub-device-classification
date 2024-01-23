@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import usb.core
 
 def get_all_usb_devices():
