@@ -4,7 +4,7 @@
 source_folder="/home/pi/Desktop/doyer/research/VirtualGridHub/main/sampling_distribution/python/output"
 
 # Ask for the method
-echo -e "1: 15s\n2: pdnego"
+echo "1: 15s\n2: pdnego"
 read -p "Enter the option number: " method_number
 
 case $method_number in
