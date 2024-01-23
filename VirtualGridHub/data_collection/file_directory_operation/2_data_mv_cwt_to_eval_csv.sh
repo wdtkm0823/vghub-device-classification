@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Ask for the method
-read -p "1: 15s\n2: pdnego\nEnter the option number: " method_number
+read -p '1: 15s\n2: pdnego\nEnter the option number: ' method_number
 
 case $method_number in
     1)
@@ -20,7 +20,7 @@ esac
 source_folder="/home/pi/Desktop/doyer/research/VirtualGridHub/devices_classify/eval_csv/dataset_${method}_20231024/cwt"
 
 # Ask for the dataset
-read -p "1: test\2: train\3: validation\Enter the option number: " dataset_number
+read -p '1: test\n2: train\n3: validation\nEnter the option number: ' dataset_number
 
 case $dataset_number in
     1)
@@ -39,7 +39,7 @@ case $dataset_number in
 esac
 
 # Ask for the device
-read -p "1: cheeropowermountain\2: cheeropowerplus5\3: googlepixel3a\4: ipadair4th\5: omnichargeomni20+\6: xperiaxz2compact\Enter the option number: " device_number
+read -p '1: cheeropowermountain\n2: cheeropowerplus5\n3: googlepixel3a\n4: ipadair4th\n5: omnichargeomni20+\n6: xperiaxz2compact\nEnter the option number: ' device_number
 
 case $device_number in
     1)
