@@ -15,6 +15,10 @@ def get_device_info(device):
         product = handle.getString(device.iProduct, 256)
         manufacturer = handle.getString(device.iManufacturer, 256)
 
+        # Debugging: Print product and manufacturer before encoding
+        print("Raw Product:", product)
+        print("Raw Manufacturer:", manufacturer)
+
         # Check if product and manufacturer are not None before encoding
         if product is not None:
             product = product.encode('utf-8')
