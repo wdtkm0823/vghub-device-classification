@@ -18,10 +18,15 @@ def get_device_info(device):
         # Check if product and manufacturer are not None before encoding
         if product is not None:
             product = product.encode('utf-8')
+        else:
+            product = b"Unknown Product"
+
         if manufacturer is not None:
             manufacturer = manufacturer.encode('utf-8')
+        else:
+            manufacturer = b"Unknown Manufacturer"
 
-        print("Product: {}, Manufacturer: {}".format(product, manufacturer))
+        print("Product: {}, Manufacturer: {}".format(product.decode('utf-8'), manufacturer.decode('utf-8')))
     finally:
         handle.releaseInterface()
 
