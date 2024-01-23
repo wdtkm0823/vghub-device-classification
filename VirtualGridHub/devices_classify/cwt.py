@@ -12,11 +12,11 @@ from scipy import signal
 method_options = {1: "15s", 2: "pdnego"}
 dataset_options = {1: "test", 2: "train", 3: "validation"}
 device_options = {
-    1: "cheeropowerplus5",
-    2: "cheeropowermountain",
-    3: "omnichargeomni20+",
-    4: "googlepixel3a",
-    5: "ipadair4th",
+    1: "cheeropowermountain",
+    2: "cheeropowerplus5",
+    3: "googlepixel3a",
+    4: "ipadair4th",
+    5: "omnichargeomni20+",
     6: "xperiaxz2compact"
 }
 
@@ -35,7 +35,7 @@ if dataset is None:
     exit(1)
 
 # Ask for the device
-device_option = int(input("1: cheeropowermountain\n2: cheeropowerplus5\n3: pixel3a\n4: ipadair4th\n5: omnichargeomni20+\n6: xperiaxz2compact\nEnter the option number: "))
+device_option = int(input("1: cheeropowermountain\n2: cheeropowerplus5\n3: googlepixel3a\n4: ipadair4th\n5: omnichargeomni20+\n6: xperiaxz2compact\nEnter the option number: "))
 device = device_options.get(device_option)
 if device is None:
     print("Invalid option for device.")

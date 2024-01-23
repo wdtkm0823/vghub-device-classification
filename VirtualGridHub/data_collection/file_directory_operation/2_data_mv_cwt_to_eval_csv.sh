@@ -39,17 +39,17 @@ case $dataset_number in
 esac
 
 # Ask for the device
-read -p "1: cheeropowermountain\2: cheeropowerplus5\3: pixel3a\4: ipadair4th\5: omnichargeomni20+\6: xperiaxz2compact\Enter the option number: " device_number
+read -p "1: cheeropowermountain\2: cheeropowerplus5\3: googlepixel3a\4: ipadair4th\5: omnichargeomni20+\6: xperiaxz2compact\Enter the option number: " device_number
 
 case $device_number in
     1)
-        device="cheeropowerplus5"
-        ;;
-    2)
         device="cheeropowermountain"
         ;;
+    2)
+        device="cheeropowerplus5"
+        ;;
     3)
-        device="pixel3a"
+        device="googleppixel3a"
         ;;
     4)
         device="ipadair4th"
