@@ -577,23 +577,24 @@ void main()
 		// return 0;
 	}
 
-	printf("1: cheeropowermountain\n2: cheeropowerplus5\n3: pixel3a\n4: ipadair4th\n5: omnichargeomni20+\n6: xperiaxz2compact\nEnter the option number: ");
+	printf("1: ankerpowercore3\n2: cheeropowermountain\n3: cheeropowerplus5\n4: pixel3a\n5: ipadair4th\n6: omnichargeomni20+\n7: xperiaxz2compact\nEnter the option number: ");
 	scanf("%d",&deviceOption);
 	if (deviceOption == 1) {
-		strcpy(device, "cheeropowermountain");
+		strcpy(device, "ankerpowercore3");
 	} else if (deviceOption == 2) {
-		strcpy(device, "cheeropowerplus5");
+		strcpy(device, "cheeropowermountain");
 	} else if (deviceOption == 3) {
-		strcpy(device, "pixel3a");
+		strcpy(device, "cheeropowerplus5");
 	} else if (deviceOption == 4) {
-		strcpy(device, "ipadair4th");
+		strcpy(device, "pixel3a");
 	} else if (deviceOption == 5) {
-		strcpy(device, "omnichargeomni20+");
+		strcpy(device, "ipadair4th");
 	} else if (deviceOption == 6) {
+		strcpy(device, "omnichargeomni20+");
+	} else if (deviceOption == 7) {
 		strcpy(device, "xperiaxz2compact");
 	} else {
 		printf("Invalid option for device.\n");
-		// return 0;
 	}
 
 	for (int i = 0; i < loop_index; i++)
