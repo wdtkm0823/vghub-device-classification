@@ -42,7 +42,7 @@ def my_model_load():
     top_model.add(Dropout(0.5))
     top_model.add(Dense(nb_classes, activation='softmax'))
     model = Model(inputs=vgg16.input, outputs=top_model(vgg16.output))
-    model.load_weights(os.path.join('model', 'devices_classify_cwt_cnn_pdnego_ep10_ba32.hdf5'), by_name=True)
+    model.load_weights(os.path.join('model', 'devices_classify_cwt_cnn_pdnego_ep50_batch32.hdf5'), by_name=True)
     return model
 
 # Return VBUS V I W from a single csv file
@@ -86,7 +86,7 @@ def plot_cwt_save(cwtmatr_,figure_size,SAVEPATH,FILENAME):
 ROOT_DIR = 'eval_csv'
 TARGET_PATTERN = "**.csv"
 SAVEPATH = 'eval_cwt'
-classes = ['cheero Power Plus 5','Google Pixel 3a', 'iPad Air 4th', 'Xperia XZ2 Compact']
+classes = ['cheero Power Mountain', 'cheero Power Plus 5', 'Google Pixel 3a', 'iPad Air 4th', 'Xperia XZ2 Compact']
 nb_classes = len(classes)
 img_rows, img_cols = 224, 224
 
