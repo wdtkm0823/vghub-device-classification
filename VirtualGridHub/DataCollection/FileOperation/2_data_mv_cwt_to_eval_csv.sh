@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Ask for the method
-echo "1: 15s\n2: pdnego"
+echo "1: 15s\n2: PDNego"
 read -p "Enter the option number: " method_number
 
 case $method_number in
@@ -9,7 +9,7 @@ case $method_number in
         method="15s"
         ;;
     2)
-        method="pdnego"
+        method="PDNego"
         ;;
     *)
         echo "Invalid option for method."
@@ -18,21 +18,21 @@ case $method_number in
 esac
 
 # Set the source folder based on the method
-source_folder="/home/pi/Desktop/doyer/research/VirtualGridHub/devices_classify/eval_csv/dataset_${method}_20231024/cwt"
+source_folder="/home/pi/Desktop/Doyer/Research/VirtualGridHub/DevicesClassify/EvalCSV/Dataset${method}/CWT"
 
 # Ask for the dataset
-echo "1: test\n2: train\n3: validation"
+echo "1: Test\n2: Train\n3: Validation"
 read -p "Enter the option number: " dataset_number
 
 case $dataset_number in
     1)
-        dataset="test"
+        dataset="Test"
         ;;
     2)
-        dataset="train"
+        dataset="Train"
         ;;
     3)
-        dataset="validation"
+        dataset="Validation"
         ;;
     *)
         echo "Invalid option for dataset."
@@ -41,30 +41,30 @@ case $dataset_number in
 esac
 
 # Ask for the device
-echo "1: ankerpowercore3\n2: cheeropowermountain\n3: cheeropowerplus5\n4: pixel3a\n5: ipadair4th\n6: omnichargeomni20+\n7: xperiaxz2compact\nEnter the option number: "
+echo "1: AnkerPowerCore3\n2: cheeroPowerMountain\n3: cheeroPowerPlus5\n4: Pixel3a\n5: iPadAir4th\n6: OmnichargeOmni20+\n7: XperiaXZ2Compact\nEnter the option number: "
 read -p "Enter the option number: " device_number
 
 case $device_number in
     1)
-        device="ankerpowercore3"
+        device="AnkerPowerCore3"
         ;;
     2)
-        device="cheeropowermountain"
+        device="cheeroPowerMountain"
         ;;
     3)
-        device="cheeropowerplus5"
+        device="cheeroPowerPlus5"
         ;;
     4)
-        device="googleppixel3a"
+        device="GooglePixel3a"
         ;;
     5)
-        device="ipadair4th"
+        device="iPadAir4th"
         ;;
     6)
-        device="omnichargeomni20+"
+        device="OmnichargeOmni20+"
         ;;
     7)
-        device="xperiaxz2compact"
+        device="XperiaXZ2Compact"
         ;;
     *)
         echo "Invalid option for device."
@@ -73,7 +73,7 @@ case $device_number in
 esac
 
 # Set the destination folder based on method, dataset, and device
-destination_folder="/home/pi/Desktop/doyer/research/VirtualGridHub/devices_classify/eval_csv/dataset_${method}_20231024/${dataset}/${device}#1"
+destination_folder="/home/pi/Desktop/Doyer/Research/VirtualGridHub/DevicesClassify/EvalCSV/Dataset${method}/${dataset}/${device}#1"
 
 # Move files matching the pattern to the destination folder.
 mv "$source_folder"/output_vghub_"$method"_data_3*.csv "$destination_folder"
