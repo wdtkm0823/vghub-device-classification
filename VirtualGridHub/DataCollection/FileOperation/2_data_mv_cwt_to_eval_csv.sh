@@ -6,7 +6,8 @@ read -p "Enter the option number: " method_number
 
 case $method_number in
     1)
-        method="15s"
+        method_folder="15s"
+        method_file="15s"
         ;;
     2)
         method_folder="PDNego"
