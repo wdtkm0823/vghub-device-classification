@@ -10,18 +10,11 @@ from matplotlib import rc
 from pandas.plotting import register_matplotlib_converters
 from sklearn.model_selection import train_test_split
 from scipy import signal
-
-# TensorFlow and Keras imports
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from tensorflow.keras.models import Sequential, Model
 from tensorflow.keras.layers import Input, Dense, Dropout, Flatten, GlobalAveragePooling2D
 from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
-
-# 以下の２行はJupyter環境の場合のみ必要
-#%matplotlib inline
-#from IPython import display
-#%config InlineBackend.figure_format='retina'
 
 register_matplotlib_converters()
 sns.set(style='whitegrid', palette='muted', font_scale=1.5)
@@ -40,16 +33,6 @@ def my_model_load():
     x = Dense(1024, activation='relu')(x)
     prediction = Dense(nb_classes, activation='softmax')(x)
     model = Model(inputs=base_model.input, outputs=prediction)
-    
-    # input_tensor = Input(shape=(img_rows, img_cols, 3))
-    # vgg16 = VGG16(include_top=False, weights=None, input_tensor=input_tensor)
-    # top_model = Sequential()
-    # top_model.add(Flatten(input_shape=vgg16.output_shape[1:]))
-    # top_model.add(Dense(256, activation='relu'))
-    # top_model.add(Dense(1024, activation='relu'))
-    # top_model.add(Dropout(0.5))
-    # top_model.add(Dense(nb_classes, activation='softmax'))
-    # model = Model(inputs=vgg16.input, outputs=top_model(vgg16.output))
     model.summary()
     model.load_weights(os.path.join('model', 'devices_classify_cwt_cnn_pdnego_ep50_batch32.hdf5'))
     return model
