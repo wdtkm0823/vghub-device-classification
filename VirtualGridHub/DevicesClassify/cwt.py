@@ -9,42 +9,42 @@ from pandas.plotting import register_matplotlib_converters
 import glob
 from scipy import signal
 
-method_options = {1: "15s", 2: "pdnego"}
-dataset_options = {1: "test", 2: "train", 3: "validation"}
+method_options = {1: "15s", 2: "PDNego"}
+dataset_options = {1: "Test", 2: "Train", 3: "Validation"}
 device_options = {
-    1: "ankerpowercore3",
-    2: "cheeropowermountain",
-    3: "cheeropowerplus5",
-    4: "googlepixel3a",
-    5: "ipadair4th",
-    6: "omnichargeomni20+",
-    7: "xperiaxz2compact"
+    1: "AnkerPowerCore3",
+    2: "cheeroPowerMountain",
+    3: "cheeroPowerPlus5",
+    4: "GooglePixel3a",
+    5: "iPadAir4th",
+    6: "OmnichargeOmni20+",
+    7: "XperiaXZ2Compact"
 }
 
 # Ask for the method
-method_option = int(input("1: 15s\n2: pdnego\nEnter the option number: "))
+method_option = int(input("1: 15s\n2: PDNego\nEnter the option number: "))
 method = method_options.get(method_option)
 if method is None:
     print("Invalid option for method.")
     exit(1)
 
 # Ask for the dataset
-dataset_option = int(input("1: test\n2: train\n3: validation\nEnter the option number: "))
+dataset_option = int(input("1: Test\n2: Train\n3: Validation\nEnter the option number: "))
 dataset = dataset_options.get(dataset_option)
 if dataset is None:
     print("Invalid option for dataset.")
     exit(1)
 
 # Ask for the device
-device_option = int(input("1: ankerpowercore3\n2: cheeropowermountain\n3: cheeropowerplus5\n4: pixel3a\n5: ipadair4th\n6: omnichargeomni20+\n7: xperiaxz2compact\nEnter the option number: "))
+device_option = int(input("1: AnkerPowerCore3\n2: cheeroPowerMountain\n3: cheeroPowerPlus5\n4: Pixel3a\n5: iPadAir4th\n6: OmnichargeOmni20+\n7: XperiaXZ2Compact\nEnter the option number: "))
 device = device_options.get(device_option)
 if device is None:
     print("Invalid option for device.")
     exit(1)
 
-ROOT_DIR = f'/home/pi/Desktop/doyer/research/VirtualGridHub/devices_classify/eval_csv/dataset_{method}_20231024/cwt'
+ROOT_DIR = f'/home/pi/Desktop/Doyer/Research/VirtualGridHub/DevicesClassify/EvalCSV/Dataset{method}/CWT'
 TARGET_PATTERN = "**.csv"
-SAVEPATH = f'/home/pi/Desktop/doyer/research/VirtualGridHub/devices_classify/eval_cwt/dataset_{method}_20231024/{dataset}/{device}#1'
+SAVEPATH = f'/home/pi/Desktop/Doyer/Research/VirtualGridHub/DevicesClassify/EvalCWT/Dataset{method}/{dataset}/{device}#1'
 
 register_matplotlib_converters()
 sns.set(style='whitegrid', palette='muted', font_scale=1.5)
