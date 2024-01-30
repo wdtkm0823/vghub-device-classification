@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # The folder from which to move the file.
-source_folder="/home/pi/Desktop/doyer/research/VirtualGridHub/main/sampling_distribution/python/output"
+source_folder="/home/pi/Desktop/Doyer/Research/VirtualGridHub/main/sampling_distribution/python/output"
 
 # Ask for the method
-echo "1: 15s\n2: pdnego"
+echo "1: 15s\n2: PDNego"
 read -p "Enter the option number: " method_number
 
 case $method_number in
@@ -12,7 +12,7 @@ case $method_number in
         method="15s"
         ;;
     2)
-        method="pdnego"
+        method="PDNego"
         ;;
     *)
         echo "Invalid option for method."
@@ -21,7 +21,7 @@ case $method_number in
 esac
 
 # Set the source folder based on the method
-destination_folder="/home/pi/Desktop/doyer/research/VirtualGridHub/devices_classify/eval_csv/dataset_${method}_20231024/cwt"
+destination_folder="/home/pi/Desktop/Doyer/Research/VirtualGridHub/DevicesClassify/EvalCSV/Dataset${method}/CWT"
 
 # Move files matching the pattern to the destination folder.
 mv "$source_folder"/output_vghub_"$method"_data_3*.csv "$destination_folder"
