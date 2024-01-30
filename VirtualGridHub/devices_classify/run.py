@@ -62,8 +62,12 @@ def make_cwt_dataset(data_path, save_a_path):
     for j, d in enumerate(data_path):
         w = ImportCSVandConvertDF(d)
         cwt_arr=calcuate_cwt_ricker(w)
-        length_path = len(str(d).split("/"))
-        save_filename = str(d).split("/")[length_path-1].split(".csv")[0]+"_ricker"
+        # mac
+        # length_path = len(str(d).split("/"))
+        # save_filename = str(d).split("/")[length_path-1].split(".csv")[0]+"_ricker"
+        # windows
+        length_path = len(str(d).split("\\"))
+        save_filename = str(d).split("\\")[length_path-1].split(".csv")[0]+"_ricker"
         plot_cwt_save(cwt_arr,figure_size,save_a_path,save_filename)
     print("CWT DATASET COMPLETED")
 
