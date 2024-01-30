@@ -2,4 +2,4 @@
 *.ds_store 
 
 # Python virtual environment
-VirtualGridHub/devices_classify/venv
+VirtualGridHub/devices_classify/Venv
