@@ -541,7 +541,7 @@ int main_vghub()
 void main()
 {
 	int loop_index, soc, dataOption, appOption, deviceOption;
-	char data[20], app[20], device[20];
+	char data[30], app[30], device[30];
 
 	printf("How many pieces of data do you want to create?: ");
 	scanf("%d",&loop_index);
