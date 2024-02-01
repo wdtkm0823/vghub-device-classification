@@ -43,7 +43,7 @@ case $dataset_number in
 esac
 
 # Ask for the device
-echo "1: AnkerPowerCore3#1\n2: cheeroPowerMountain#1\n3: cheeroPowerPlus5#1\n4: GooglePixel3a#1\n5: iPadAir4th#1\n6: OmnichargeOmni20+#1\n7: XperiaXZ2Compact#1"
+echo "1: AnkerPowerCore3#1\n2: AnkerPowerCore3#2\n3: cheeroPowerMountain#1\n4: cheeroPowerPlus5#1\n5: GooglePixel3a#1\n6: iPadAir4th#1\n7: OmnichargeOmni20+#1\n8: XperiaXZ2Compact#1"
 read -p "Enter the option number: " device_number
 
 case $device_number in
@@ -51,21 +51,24 @@ case $device_number in
         device="AnkerPowerCore3#1"
         ;;
     2)
-        device="cheeroPowerMountain#1"
+        device="AnkerPowerCore3#2"
         ;;
     3)
-        device="cheeroPowerPlus5#1"
+        device="cheeroPowerMountain#1"
         ;;
     4)
-        device="GooglePixel3a#1"
+        device="cheeroPowerPlus5#1"
         ;;
     5)
-        device="iPadAir4th#1"
+        device="GooglePixel3a#1"
         ;;
     6)
-        device="OmnichargeOmni20+#1"
+        device="iPadAir4th#1"
         ;;
     7)
+        device="OmnichargeOmni20+#1"
+        ;;
+    8)
         device="XperiaXZ2Compact#1"
         ;;
     *)
