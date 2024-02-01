@@ -33,7 +33,7 @@ def my_model_load():
     x = Dense(1024, activation='relu')(x)
     prediction = Dense(nb_classes, activation='softmax')(x)
     model = Model(inputs=base_model.input, outputs=prediction)
-    model.summary()
+    # model.summary()
     model.load_weights(os.path.join('model', 'devices_classify_cwt_cnn_pdnego_ep50_batch32.hdf5'))
     return model
 
@@ -63,11 +63,11 @@ def make_cwt_dataset(data_path, save_a_path):
         w = ImportCSVandConvertDF(d)
         cwt_arr=calcuate_cwt_ricker(w)
         # mac
-        # length_path = len(str(d).split("/"))
-        # save_filename = str(d).split("/")[length_path-1].split(".csv")[0]+"_ricker"
+        length_path = len(str(d).split("/"))
+        save_filename = str(d).split("/")[length_path-1].split(".csv")[0]+"_ricker"
         # windows
-        length_path = len(str(d).split("\\"))
-        save_filename = str(d).split("\\")[length_path-1].split(".csv")[0]+"_ricker"
+        # length_path = len(str(d).split("\\"))
+        # save_filename = str(d).split("\\")[length_path-1].split(".csv")[0]+"_ricker"
         plot_cwt_save(cwt_arr,figure_size,save_a_path,save_filename)
     print("CWT DATASET COMPLETED")
 
@@ -79,9 +79,9 @@ def plot_cwt_save(cwtmatr_,figure_size,SAVEPATH,FILENAME):
     plt.savefig(SAVEPATH+'/'+FILENAME+'.png')
     plt.close('all')
 
-ROOT_DIR = 'eval_csv'
+ROOT_DIR = 'EvalCSV'
 TARGET_PATTERN = "**.csv"
-SAVEPATH = 'eval_cwt'
+SAVEPATH = 'EvalCWT'
 classes = ['cheero Power Mountain', 'cheero Power Plus 5', 'Google Pixel 3a', 'iPad Air 4th', 'Xperia XZ2 Compact']
 nb_classes = len(classes)
 img_rows, img_cols = 224, 224
