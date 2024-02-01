@@ -9,7 +9,7 @@ def make_path(output_name, index, soc, data, app, device):
     output_paths = []
     for i in range(port_num):
         if i == 3:
-            output_paths.append(os.path.join(output_path,output_name+"_"+str(i)+"_"+device+"#1_"+"soc"+str(soc)+"_"+app+"_"+data+"_"+index+".csv"))
+            output_paths.append(os.path.join(output_path,output_name+"_"+str(i)+"_"+device+"_"+"soc"+str(soc)+"_"+app+"_"+data+"_"+index+".csv"))
         else:
             output_paths.append(os.path.join(output_path,output_name+"_"+str(i)+".csv"))
     return output_paths

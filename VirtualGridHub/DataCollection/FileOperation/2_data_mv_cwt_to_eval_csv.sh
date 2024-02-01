@@ -43,30 +43,30 @@ case $dataset_number in
 esac
 
 # Ask for the device
-echo "1: AnkerPowerCore3\n2: cheeroPowerMountain\n3: cheeroPowerPlus5\n4: Pixel3a\n5: iPadAir4th\n6: OmnichargeOmni20+\n7: XperiaXZ2Compact"
+echo "1: AnkerPowerCore3#1\n2: cheeroPowerMountain#1\n3: cheeroPowerPlus5#1\n4: GooglePixel3a#1\n5: iPadAir4th#1\n6: OmnichargeOmni20+#1\n7: XperiaXZ2Compact#1"
 read -p "Enter the option number: " device_number
 
 case $device_number in
     1)
-        device="AnkerPowerCore3"
+        device="AnkerPowerCore3#1"
         ;;
     2)
-        device="cheeroPowerMountain"
+        device="cheeroPowerMountain#1"
         ;;
     3)
-        device="cheeroPowerPlus5"
+        device="cheeroPowerPlus5#1"
         ;;
     4)
-        device="GooglePixel3a"
+        device="GooglePixel3a#1"
         ;;
     5)
-        device="iPadAir4th"
+        device="iPadAir4th#1"
         ;;
     6)
-        device="OmnichargeOmni20+"
+        device="OmnichargeOmni20+#1"
         ;;
     7)
-        device="XperiaXZ2Compact"
+        device="XperiaXZ2Compact#1"
         ;;
     *)
         echo "Invalid option for device."
@@ -75,7 +75,7 @@ case $device_number in
 esac
 
 # Set the destination folder based on method, dataset, and device
-destination_folder="/home/pi/Desktop/Doyer/Research/VirtualGridHub/DevicesClassify/EvalCSV/Dataset${method_folder}/${dataset}/${device}#1"
+destination_folder="/home/pi/Desktop/Doyer/Research/VirtualGridHub/DevicesClassify/EvalCSV/Dataset${method_folder}/${dataset}/${device}"
 
 # Move files matching the pattern to the destination folder.
 mv "$source_folder"/output_vghub_"$method_file"_data_3*.csv "$destination_folder"

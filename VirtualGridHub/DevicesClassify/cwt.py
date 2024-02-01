@@ -36,7 +36,7 @@ if dataset is None:
     exit(1)
 
 # Ask for the device
-device_option = int(input("1: AnkerPowerCore3\n2: cheeroPowerMountain\n3: cheeroPowerPlus5\n4: Pixel3a\n5: iPadAir4th\n6: OmnichargeOmni20+\n7: XperiaXZ2Compact\nEnter the option number: "))
+device_option = int(input("1: AnkerPowerCore3#1\n2: cheeroPowerMountain#1\n3: cheeroPowerPlus5#1\n4: GooglePixel3a#1\n5: iPadAir4th#1\n6: OmnichargeOmni20+#1\n7: XperiaXZ2Compact#1\nEnter the option number: "))
 device = device_options.get(device_option)
 if device is None:
     print("Invalid option for device.")
@@ -44,7 +44,7 @@ if device is None:
 
 ROOT_DIR = f'/home/pi/Desktop/Doyer/Research/VirtualGridHub/DevicesClassify/EvalCSV/Dataset{method}/CWT'
 TARGET_PATTERN = "**.csv"
-SAVEPATH = f'/home/pi/Desktop/Doyer/Research/VirtualGridHub/DevicesClassify/EvalCWT/Dataset{method}/{dataset}/{device}#1'
+SAVEPATH = f'/home/pi/Desktop/Doyer/Research/VirtualGridHub/DevicesClassify/EvalCWT/Dataset{method}/{dataset}/{device}'
 
 register_matplotlib_converters()
 sns.set(style='whitegrid', palette='muted', font_scale=1.5)

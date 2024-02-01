@@ -577,22 +577,22 @@ void main()
 		// return 0;
 	}
 
-	printf("1: ankerpowercore3\n2: cheeropowermountain\n3: cheeropowerplus5\n4: pixel3a\n5: ipadair4th\n6: omnichargeomni20+\n7: xperiaxz2compact\nEnter the option number: ");
+	printf("1: ankerpowercore3#1\n2: cheeropowermountain#1\n3: cheeropowerplus5#1\n4: googlepixel3a#1\n5: ipadair4th#1\n6: omnichargeomni20+#1\n7: xperiaxz2compact#1\nEnter the option number: ");
 	scanf("%d",&deviceOption);
 	if (deviceOption == 1) {
-		strcpy(device, "ankerpowercore3");
+		strcpy(device, "ankerpowercore3#1");
 	} else if (deviceOption == 2) {
-		strcpy(device, "cheeropowermountain");
+		strcpy(device, "cheeropowermountain#1");
 	} else if (deviceOption == 3) {
-		strcpy(device, "cheeropowerplus5");
+		strcpy(device, "cheeropowerplus5#1");
 	} else if (deviceOption == 4) {
-		strcpy(device, "pixel3a");
+		strcpy(device, "googlepixel3a#1");
 	} else if (deviceOption == 5) {
-		strcpy(device, "ipadair4th");
+		strcpy(device, "ipadair4th#1");
 	} else if (deviceOption == 6) {
-		strcpy(device, "omnichargeomni20+");
+		strcpy(device, "omnichargeomni20+#1");
 	} else if (deviceOption == 7) {
-		strcpy(device, "xperiaxz2compact");
+		strcpy(device, "xperiaxz2compact#1");
 	} else {
 		printf("Invalid option for device.\n");
 	}
