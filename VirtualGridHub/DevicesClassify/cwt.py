@@ -12,13 +12,13 @@ from scipy import signal
 method_options = {1: "15s", 2: "PDNego"}
 dataset_options = {1: "Test", 2: "Train", 3: "Validation"}
 device_options = {
-    1: "AnkerPowerCore3",
-    2: "cheeroPowerMountain",
-    3: "cheeroPowerPlus5",
-    4: "GooglePixel3a",
-    5: "iPadAir4th",
-    6: "OmnichargeOmni20+",
-    7: "XperiaXZ2Compact"
+    1: "AnkerPowerCore3#1",
+    2: "cheeroPowerMountain#1",
+    3: "cheeroPowerPlus5#1",
+    4: "GooglePixel3a#1",
+    5: "iPadAir4th#1",
+    6: "OmnichargeOmni20+#1",
+    7: "XperiaXZ2Compact#1"
 }
 
 # Ask for the method
