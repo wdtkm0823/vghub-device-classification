@@ -107,16 +107,13 @@ def predict():
         for pre in predict:
             y = pre.argmax()
             class_name = classes[y]
-            confidence = pre[y] * 100
-            print("--------------------------------------------------")
+            # confidence = pre[y] * 100
             print(f"File Name: {target}")
-            print("--------------------------------------------------")
             print(f"Prediction Class: {class_name}")
-            print(f"Credibility: {confidence:.2f}%")
-            print("--------------------------------------------------")
-            print("Probability of each class:")
-            for i, prob in enumerate(pre):
-                print(f"({i+1}){classes[i]}: {prob * 100:.2f}%")
+            # print(f"Credibility: {confidence:.2f}%")
+            # print("Probability of each class:")
+            # for i, prob in enumerate(pre):
+            #     print(f"({i+1}){classes[i]}: {prob * 100:.2f}%")
     return class_name
 
 class_name = predict()
