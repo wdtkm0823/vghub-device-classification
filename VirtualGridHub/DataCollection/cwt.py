@@ -19,7 +19,8 @@ device_options = {
     5: "GooglePixel3a#1",
     6: "iPadAir4th#1",
     7: "OmnichargeOmni20+#1",
-    8: "XperiaXZ2Compact#1"
+    8: "JFPEACE#1",
+    9: "XperiaXZ2Compact#1",
 }
 
 # Ask for the method
@@ -37,7 +38,7 @@ if dataset is None:
     exit(1)
 
 # Ask for the device
-device_option = int(input("1: AnkerPowerCore3#1\n2: AnkerPowerCore3#2\n3: cheeroPowerMountain#1\n4: cheeroPowerPlus5#1\n5: GooglePixel3a#1\n6: iPadAir4th#1\n7: OmnichargeOmni20+#1\n8: XperiaXZ2Compact#1\nEnter the option number: "))
+device_option = int(input("1: AnkerPowerCore3#1\n2: AnkerPowerCore3#2\n3: cheeroPowerMountain#1\n4: cheeroPowerPlus5#1\n5: GooglePixel3a#1\n6: iPadAir4th#1\n7: OmnichargeOmni20+#1\n8: JFPEACE#1\n9: XperiaXZ2Compact#1\nEnter the option number: "))
 device = device_options.get(device_option)
 if device is None:
     print("Invalid option for device.")
