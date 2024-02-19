@@ -43,9 +43,9 @@ if device is None:
     print("Invalid option for device.")
     exit(1)
 
-ROOT_DIR = f'/home/pi/Desktop/Doyer/Research/VirtualGridHub/DevicesClassify/EvalCSV/Dataset{method}/CWT'
+ROOT_DIR = f'/home/pi/Desktop/Doyer/Research/VirtualGridHub/DataCollection/EvalCSV/Dataset{method}/CWT'
 TARGET_PATTERN = "**.csv"
-SAVEPATH = f'/home/pi/Desktop/Doyer/Research/VirtualGridHub/DevicesClassify/EvalCWT/Dataset{method}/{dataset}/{device}'
+SAVEPATH = f'/home/pi/Desktop/Doyer/Research/VirtualGridHub/DataCollection/EvalCWT/Dataset{method}/{dataset}/{device}'
 
 register_matplotlib_converters()
 sns.set(style='whitegrid', palette='muted', font_scale=1.5)
