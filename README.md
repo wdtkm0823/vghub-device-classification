@@ -43,29 +43,45 @@ USB-PDに準拠したUSB Type-Cに接続されたデバイス情報の取得
 ❯ tree -a -I "node_modules|.next|.git|.pytest_cache|static" -L 2
 ```
 .  
-├── .DS_Store  
-├── .gitignore  
-├── .vscode  
-│   └── settings.json  
-├── README.md  
-├── VirtualGridHub  
-│   ├── .DS_Store  
-│   ├── data_collection  
-│   ├── devices_classify  
-│   └── main  
-├── maxflow  
-│   ├── addbottom_vghub4_3.csv  
-│   ├── addright_vghub4_3.csv  
-│   ├── maxflowderive_proposition.py  
-│   ├── maxflowderive_proposition_old.py  
-│   ├── maxflowderive_sequentially.py  
-│   ├── sink_vghub4_3.csv  
-│   ├── source_vghub4_3.csv  
-│   └── vertexes4.csv  
-└── visualization  
-    ├── csv  
-    ├── googlepixel3a#1.ipynb  
-    └── ipadair4th#1.ipynb  
+.
+├── .DS_Store
+├── .gitignore
+├── .venv
+│   ├── .gitignore
+│   ├── bin
+│   ├── include
+│   ├── lib
+│   ├── pyvenv.cfg
+│   └── share
+├── MaxFlowGraph
+│   ├── addbottom_vghub4_3.csv
+│   ├── addright_vghub4_3.csv
+│   ├── maxflowderive_proposition.py
+│   ├── maxflowderive_proposition_old.py
+│   ├── maxflowderive_sequentially.py
+│   ├── sink_vghub4_3.csv
+│   ├── source_vghub4_3.csv
+│   └── vertexes4.csv
+├── README.md
+├── SECURITY.md
+├── VirtualGridHub
+│   ├── .DS_Store
+│   ├── DataCollection
+│   ├── DevicesClassify
+│   └── main
+├── VisualizationWave
+│   ├── .DS_Store
+│   ├── Images
+│   ├── README.md
+│   ├── ankerpowercore3#1.ipynb
+│   ├── cheeropowermountain#1.ipynb
+│   ├── cheeropowerplus5#1.ipynb
+│   ├── googlepixel3a#1.ipynb
+│   ├── ipadair4th#1.ipynb
+│   ├── omnichargeomni20+#1.ipynb
+│   ├── requirements.txt
+│   └── xperiaxz2compact#1.ipynb
+└── dependabot.yml 
 ```
 <p align="right">(<a href="#top">トップへ</a>)</p>
 
