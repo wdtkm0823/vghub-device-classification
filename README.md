@@ -33,14 +33,14 @@ USB-PDに準拠したUSB Type-Cに接続されたデバイス情報の取得
 | 言語・フレームワーク  | バージョン |
 | --------------------- | ---------- |
 | Python                | 3.11.3     |
-
-<p align="right">(<a href="#top">トップへ</a>)</p>
+| C                     |            |
 
 ## ディレクトリ構成
 
-<!-- Treeコマンドを使ってディレクトリ構成を記載 -->
-
+<!-- Treeコマンドを使ってディレクトリ構成を記載  
+`
 ❯ tree -a -I "node_modules|.next|.git|.pytest_cache|static" -L 2
+` -->
 ```
 .  
 .
@@ -86,6 +86,23 @@ USB-PDに準拠したUSB Type-Cに接続されたデバイス情報の取得
 <p align="right">(<a href="#top">トップへ</a>)</p>
 
 ## 開発環境構築
+### Pythonの仮想環境
+#### 仮想環境作成
+プロジェクト直下に移動後、以下のコマンドを実行するとプロジェクト内に指定した仮想環境名のフォルダが作成される。  
+`python -m venv .venv`
+#### 仮想環境のアクティベート
+次に、以下のコマンドを使って仮想環境をアクティベートする。
+##### Linux, Macの場合
+`. .venv/bin/activate.fish`
+##### Windowsの場合
+`. .venv\Scripts\activate`
 
+#### パッケージのインストール  
+`pip install -r requirements.txt`
+
+##### tensorflowをインストールできない場合
+tensorflowをURLからインストールする。
+- python 3.11  
+`pip install --upgrade https://storage.googleapis.com/tensorflow/windows/cpu/tensorflow_cpu-2.15.0-cp311-cp311-win_amd64.whl`
 <p align="right">(<a href="#top">トップへ</a>)</p>
 
