@@ -117,4 +117,6 @@ def predict():
             print("Probability of each class:")
             for i, prob in enumerate(pre):
                 print(f"({i+1}){classes[i]}: {prob * 100:.2f}%")
-predict()
+    return class_name
+
+class_name = predict()
