@@ -42,7 +42,6 @@ USB-PDに準拠したUSB Type-Cに接続されたデバイス情報の取得
 ❯ tree -a -I "node_modules|.next|.git|.pytest_cache|static" -L 2
 ` -->
 ```
-.  
 .
 ├── .DS_Store
 ├── .gitignore
@@ -72,16 +71,15 @@ USB-PDに準拠したUSB Type-Cに接続されたデバイス情報の取得
 ├── VisualizationWave
 │   ├── .DS_Store
 │   ├── Images
-│   ├── README.md
 │   ├── ankerpowercore3#1.ipynb
 │   ├── cheeropowermountain#1.ipynb
 │   ├── cheeropowerplus5#1.ipynb
 │   ├── googlepixel3a#1.ipynb
 │   ├── ipadair4th#1.ipynb
 │   ├── omnichargeomni20+#1.ipynb
-│   ├── requirements.txt
 │   └── xperiaxz2compact#1.ipynb
-└── dependabot.yml 
+├── dependabot.yml
+└── requirements.txt
 ```
 <p align="right">(<a href="#top">トップへ</a>)</p>
 
