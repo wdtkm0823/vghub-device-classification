@@ -1,2 +1,6 @@
 # .DS_Store files
 *.ds_store
+
+# Input for device identification
+VirtualGridHub/DevicesClassify/EvalCSV
+VirtualGridHub/DevicesClassify/EvalCWT
