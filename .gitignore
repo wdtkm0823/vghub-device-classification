@@ -4,3 +4,7 @@
 # Input for device identification
 VirtualGridHub/DevicesClassify/EvalCSV
 VirtualGridHub/DevicesClassify/EvalCWT
+
+# Output
+VirtualGridHub/main/sampling_distribution/python/output
+VirtualGridHub/main/sampling_distribution/python/csv
