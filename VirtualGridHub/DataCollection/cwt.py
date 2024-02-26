@@ -19,7 +19,7 @@ device_options = {
     5: "GooglePixel3a#1",
     6: "iPadAir4th#1",
     7: "OmnichargeOmni20+#1",
-    8: "JFPEACE#1",
+    8: "JFPEACE8#1",
     9: "XperiaXZ2Compact#1",
 }
 
