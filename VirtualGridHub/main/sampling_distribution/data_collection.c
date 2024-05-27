@@ -443,13 +443,13 @@ int vghub_power_rule()
 
 	// 左から　ポートID、ロール（Source→0、Sink→1）、Source最大W、Sink最大W
 	//  SINKはVGHUBがもらう方　SOURCEは渡す方
-	// VGHUBPD_STATUS sets0 = SetPortConfig(0, 1, 0, 60);
-	// VGHUBPD_STATUS sets1 = SetPortConfig(1, 1, 0, 60);
-	// VGHUBPD_STATUS sets2 = SetPortConfig(2, 1, 0, 60);
-	VGHUBPD_STATUS sets3 = SetPortConfig(3, 0, 60, 0);
-	// VGHUBPD_STATUS sets4 = SetPortConfig(4, 1, 0, 60);
-	// VGHUBPD_STATUS sets5 = SetPortConfig(5, 1, 0, 60);
-	// VGHUBPD_STATUS sets6 = SetPortConfig(6, 1, 0, 60);
+	VGHUBPD_STATUS sets0 = SetPortConfig(0, 0, 100, 0);
+	VGHUBPD_STATUS sets1 = SetPortConfig(1, 0, 100, 0);
+	VGHUBPD_STATUS sets2 = SetPortConfig(2, 0, 100, 0);
+	VGHUBPD_STATUS sets3 = SetPortConfig(3, 1, 0, 100);
+	VGHUBPD_STATUS sets4 = SetPortConfig(4, 0, 100, 0);
+	VGHUBPD_STATUS sets5 = SetPortConfig(5, 0, 100, 0);
+	VGHUBPD_STATUS sets6 = SetPortConfig(6, 0, 100, 0);
 
 	sleep(1);
 

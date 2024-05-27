@@ -20,7 +20,7 @@ case $method_number in
 esac
 
 # Set the source folder based on the method
-source_folder="/home/pi/Desktop/Doyer/Research/VirtualGridHub/DataCollection/EvalCSV/Dataset${method_folder}/CWT"
+source_folder="/home/pi/Desktop/doyer/research/VirtualGridHub/DataCollection/EvalCSV/Dataset${method_folder}/CWT"
 
 # Ask for the dataset
 echo "1: Test\n2: Train\n3: Validation"
@@ -81,7 +81,7 @@ case $device_number in
 esac
 
 # Set the destination folder based on method, dataset, and device
-destination_folder="/home/pi/Desktop/Doyer/Research/VirtualGridHub/DataCollection/EvalCSV/Dataset${method_folder}/${dataset}/${device}"
+destination_folder="/home/pi/Desktop/doyer/research/VirtualGridHub/DataCollection/EvalCSV/Dataset${method_folder}/${dataset}/${device}"
 
 # Move files matching the pattern to the destination folder.
 mv "$source_folder"/output_vghub_"$method_file"_data_3*.csv "$destination_folder"
