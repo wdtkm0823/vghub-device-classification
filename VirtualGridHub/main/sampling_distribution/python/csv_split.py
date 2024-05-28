@@ -3,13 +3,13 @@ import pandas as pd
 import numpy as np
 import os
 
-def make_path(output_name, index, soc, data, app, device):
+def make_path(output_name, index, soc, data, app, device, role):
     port_num = 7
     output_path = "python/output/"
     output_paths = []
     for i in range(port_num):
         if i == 3:
-            output_paths.append(os.path.join(output_path,output_name+"_"+str(i)+"_"+device+"_"+"soc"+str(soc)+"_"+app+"_"+data+"_"+index+".csv"))
+            output_paths.append(os.path.join(output_path,output_name+"_"+str(i)+"_"+device+"_"+"soc"+str(soc)+"_"+app+"_"+data+"_"+role+"_"+index+".csv"))
         else:
             output_paths.append(os.path.join(output_path,output_name+"_"+str(i)+".csv"))
     return output_paths
@@ -44,8 +44,9 @@ def main():
     print("Data: ",args[4])
     print("Application: ",args[5])
     print("Device: ",args[6])
+    print("role: ",args[7])
     output_name = "output_" + args[1]
-    output_paths = make_path(output_name, args[2], args[3], args[4], args[5], args[6])
+    output_paths = make_path(output_name, args[2], args[3], args[4], args[5], args[6], args[7])
     csv_input_path = os.path.join("python","csv", args[1]+".csv")
     csv = input_csv(csv_input_path)
     convert_csv(csv, output_paths)

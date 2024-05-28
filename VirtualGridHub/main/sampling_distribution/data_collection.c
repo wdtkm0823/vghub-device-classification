@@ -189,15 +189,15 @@ int write_csv_end(void)
 	printf("Finished writing file to %s\n", fname1);
 	return 0;
 }
-int call_python_csv_split(int i, int soc, char *data, char *app, char *device)
+int call_python_csv_split(int i, int soc, char *data, char *app, char *device, char *role)
 {
 	printf("-------------------\n");
 	printf("#### call py csv_split ####\n");
 	char command1[200];
 	char command2[200];
 
-	snprintf(command1, sizeof(command1), "python3 python/csv_split.py vghub_15s_data %d %d %s %s %s\n", i, soc, data, app, device);
-	snprintf(command2, sizeof(command2), "python3 python/csv_split.py vghub_pdnego_data %d %d %s %s %s\n", i, soc, data, app, device);
+	snprintf(command1, sizeof(command1), "python3 python/csv_split.py vghub_15s_data %d %d %s %s %s %s\n", i, soc, data, app, device, role);
+	snprintf(command2, sizeof(command2), "python3 python/csv_split.py vghub_pdnego_data %d %d %s %s %s %s\n", i, soc, data, app, device, role);
 
 	system(command1);
 	system(command2);
@@ -540,8 +540,8 @@ int main_vghub()
 
 void main()
 {
-	int loop_index, soc, dataOption, appOption, deviceOption;
-	char data[30], app[30], device[30];
+	int loop_index, soc, dataOption, appOption, deviceOption, roleOption;
+	char data[30], app[30], device[30], role[30];
 
 	printf("How many pieces of data do you want to create?: ");
 	scanf("%d",&loop_index);
@@ -600,6 +600,14 @@ void main()
 	} else {
 		printf("Invalid option for device.\n");
 	}
+	
+	printf("1: sink\n2: source\n");
+	scanf("%d",&roleOption);
+	if (roleOption == 1) {
+		strcpy(role, "sink");
+	} else {
+		strcpy(role, "source");
+	}
 
 	for (int i = 0; i < loop_index; i++)
 	{
@@ -615,7 +623,7 @@ void main()
 		printf("flag_start: %d\nflag_finish: %d\n", flag_start, flag_finish);
 		copyCsvDataWithIndex(inputFileName, outputFileName, flag_finish, flag_start);
 		printf("\n");
-		call_python_csv_split(i+1, soc, data, app, device);
+		call_python_csv_split(i+1, soc, data, app, device, role);
 		// call_python_csv_split(i+1, soc, app);
 		call_python();
 	}
