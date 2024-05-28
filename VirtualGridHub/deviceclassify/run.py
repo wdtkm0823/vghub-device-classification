@@ -79,9 +79,9 @@ def plot_cwt_save(cwtmatr_,figure_size,SAVEPATH,FILENAME):
     plt.savefig(SAVEPATH+'/'+FILENAME+'.png')
     plt.close('all')
 
-ROOT_DIR = 'EvalCSV'
+ROOT_DIR = 'evalCSV'
 TARGET_PATTERN = "**.csv"
-SAVEPATH = 'EvalCWT'
+SAVEPATH = 'evalcwt'
 classes = ['cheero Power Mountain', 'cheero Power Plus 5', 'Google Pixel 3a', 'iPad Air 4th', 'Xperia XZ2 Compact']
 nb_classes = len(classes)
 img_rows, img_cols = 224, 224
