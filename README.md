@@ -14,19 +14,18 @@
 3. [ディレクトリ構成](#ディレクトリ構成)
 4. [開発環境構築](#開発環境構築)
 
-## Virtual Grid
+## プロジェクトについて
+
+### Virtual Grid
 
 小規模創電・蓄電の統合運用を可能にするインターネット型電力プラットフォーム  
 本研究はJSPS科研費23H01636の助成を受けたものです。
 
-### 参考URL 
+#### 参考URL 
 インターネット型電力プラットフォームについて：　http://www.iperc.uec.ac.jp/virtualgrid.html
 
-<!-- プロジェクトについて -->
-
-## プロジェクトについて
-
-USB-PDに準拠したUSB Type-Cに接続されたデバイス情報の取得
+### 目的
+USB-PDに準拠したUSB Type-Cに接続されたデバイス識別
 
 ## 環境
 
@@ -46,40 +45,30 @@ USB-PDに準拠したUSB Type-Cに接続されたデバイス情報の取得
 ├── .DS_Store
 ├── .gitignore
 ├── .venv
-│   ├── .gitignore
-│   ├── bin
-│   ├── include
-│   ├── lib
-│   ├── pyvenv.cfg
-│   └── share
-├── MaxFlowGraph
-│   ├── addbottom_vghub4_3.csv
-│   ├── addright_vghub4_3.csv
-│   ├── maxflowderive_proposition.py
-│   ├── maxflowderive_proposition_old.py
-│   ├── maxflowderive_sequentially.py
-│   ├── sink_vghub4_3.csv
-│   ├── source_vghub4_3.csv
-│   └── vertexes4.csv
+│   ├── .gitignore
+│   ├── bin
+│   ├── include
+│   ├── lib
+│   ├── pyvenv.cfg
+│   └── share
 ├── README.md
 ├── SECURITY.md
 ├── VirtualGridHub
-│   ├── .DS_Store
-│   ├── DataCollection
-│   ├── DevicesClassify
-│   └── main
-├── VisualizationWave
-│   ├── .DS_Store
-│   ├── Images
-│   ├── ankerpowercore3#1.ipynb
-│   ├── cheeropowermountain#1.ipynb
-│   ├── cheeropowerplus5#1.ipynb
-│   ├── googlepixel3a#1.ipynb
-│   ├── ipadair4th#1.ipynb
-│   ├── omnichargeomni20+#1.ipynb
-│   └── xperiaxz2compact#1.ipynb
+│   ├── .DS_Store
+│   ├── DataCollection
+│   ├── deviceclassify
+│   └── main
 ├── dependabot.yml
-└── requirements.txt
+├── requirements.txt
+└── visualization_wave
+    ├── .DS_Store
+    ├── ankerpowercore3#1.ipynb
+    ├── cheeropowermountain#1.ipynb
+    ├── cheeropowerplus5#1.ipynb
+    ├── googlepixel3a#1.ipynb
+    ├── images
+    ├── ipadair4th#1.ipynb
+    └── xperiaxz2compact#1.ipynb
 ```
 <p align="right">(<a href="#top">トップへ</a>)</p>
 
